@@ -6,13 +6,14 @@ public class ThrowForce : MonoBehaviour
 {
 
     public float thrust;
-    public float decentThrust;
+    public float descentThrust;
     public float sideThrust;
     public Rigidbody rb;
     public ScoreKeeper scoreKeeper;
     //public HapticVibration hapticVibration;
     public DiscRespawn discRespawn;
     public bool addForce;
+    public float overTimeSlow;
 
     public EventManager eventManager;
 
@@ -46,18 +47,20 @@ public class ThrowForce : MonoBehaviour
                 {
                     //Debug.Log("thrust added");
                     rb = eventManager.discThrown.GetComponent<Rigidbody>();
+                    overTimeSlow = overTimeSlow + Time.deltaTime;
+                    //thrust = thrust - overTimeSlow;
 
                     //if right hand
                     if (eventManager.rightHand == true)
                     {
-                        rb.AddRelativeForce(transform.forward * -thrust);
+                        rb.AddRelativeForce(transform.forward * -thrust); //*eventManager.initialDiscVelocity)
                     }
 
 
                     //if left hand
                     if (eventManager.rightHand == false)
                     {
-                        rb.AddRelativeForce(transform.forward * thrust);
+                        rb.AddRelativeForce(transform.forward * thrust); //*eventManager.initialDiscVelocity)
                     }
 
                 }
@@ -66,8 +69,15 @@ public class ThrowForce : MonoBehaviour
             if ( scoreKeeper.score >= 50) //rb.velocity.x >= -6.0f
             {
                 //rb = eventManager.discThrown.GetComponent<Rigidbody>();
+
+
+                //alternative - consistent curve from throw start
+                //Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
+               //rb.AddRelativeForce(0, 0, sideDir * curveAmount);
+
+
                 rb.AddRelativeForce(0,0,sideThrust);
-                rb.AddForce(0, -decentThrust, 0);
+                rb.AddForce(0, -descentThrust, 0);
                 // Debug.Log("Sidethrust added");
             }
         }

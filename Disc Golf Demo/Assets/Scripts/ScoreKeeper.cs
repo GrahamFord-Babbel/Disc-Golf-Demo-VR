@@ -31,7 +31,12 @@ public class ScoreKeeper : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (hapticVibrationL.discGrabbed == true)
+        if (discRespawn.discLanded)
+        {
+            discGrabbedScoreKeeper = false;
+        }
+
+        if (eventManager.discIsThrown == true)
         {
             discGrabbedScoreKeeper = true;
             discA = eventManager.discThrown.transform;
@@ -41,16 +46,16 @@ public class ScoreKeeper : MonoBehaviour {
         {
             discGrabbedScoreKeeper = true;
             discA = eventManager.discThrown.transform;
+
         }
 
         if (discGrabbedScoreKeeper && discRespawn.discLanded != true)
         {
-            score = Vector3.Distance(player.position, discA.position) * distanceMultiplier;
-
-            if (discRespawn.discLanded)
+            if (discRespawn.scene.buildIndex < 2)
             {
-                discGrabbedScoreKeeper = false;
+                score = Vector3.Distance(player.position, discA.position) * distanceMultiplier;
             }
+
         }
     }
 }

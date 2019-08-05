@@ -14,7 +14,8 @@ public class HapticVibration : MonoBehaviour
     public DiscRespawn discRespawn;
 
     public EventManager eventManager;
-    public Rigidbody rb;
+    //public Rigidbody rb;
+
 
     // Start is called before the first frame update
 
@@ -42,6 +43,7 @@ public class HapticVibration : MonoBehaviour
             //prime disc for release vibration
             discGrabbed = true;
             discRespawn.discLanded = false;
+            eventManager.discThrown.GetComponent<TrailRenderer>().enabled = false;
 
         }
 
@@ -49,6 +51,7 @@ public class HapticVibration : MonoBehaviour
         if(discGrabbed == true && this.GetComponent<Collider>().enabled == true) 
         {
             eventManager.discIsThrown = true;
+            eventManager.discThrown.GetComponent<TrailRenderer>().enabled = true;
             //if this game objects parent is R, string is Rtouch, else
             if (this.gameObject.transform.parent.name == "LeftControllerAnchor")
             {
@@ -61,11 +64,19 @@ public class HapticVibration : MonoBehaviour
                 eventManager.rightHand = true;
             }
 
-            OVRInput.SetControllerVibration(0.35f, 0.35f, thisController);
 
-            if(eventManager.discIsThrown == true)
+            //set disc velocity immediately after thrown
+            OVRInput.SetControllerVibration(0.35f, 0.35f, thisController);
+            eventManager.initialDiscVelocity = ((eventManager.discThrown.GetComponent<Rigidbody>().velocity.x)/50);
+            Debug.Log("intial velocity is: " + eventManager.initialDiscVelocity);
+           
+            //set disc location upon throw
+            eventManager.discLocationX = eventManager.discThrown.transform;
+
+            if (eventManager.discIsThrown == true)
             {
                 releaseTimer++;
+                
             }
         }
     }
@@ -75,8 +86,10 @@ public class HapticVibration : MonoBehaviour
         //find the disc picked up
         if (other.tag == "Disc")
         {
-    
+            
             eventManager.discThrown = other.gameObject;
+            //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             //Debug.Log("velocity: " + eventManager.discThrown.GetComponent<Rigidbody>().velocity);
             //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }

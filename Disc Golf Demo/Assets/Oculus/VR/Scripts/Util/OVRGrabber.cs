@@ -27,6 +27,8 @@ public class OVRGrabber : MonoBehaviour
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
 
+    public float throwGain;
+
     // Demonstrates parenting the held object to the hand's transform when grabbed.
     // When false, the grabbed object is moved every FixedUpdate using MovePosition.
     // Note that MovePosition is required for proper physics simulation. If you set this to true, you can
@@ -328,6 +330,7 @@ public class OVRGrabber : MonoBehaviour
 
 			OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
 			Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller);
+            linearVelocity *= throwGain;
 			Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
 
             GrabbableRelease(linearVelocity, angularVelocity);

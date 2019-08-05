@@ -8,7 +8,7 @@ public class DistanceTrigger : MonoBehaviour
     public HapticVibration hapticVibrationL;
     public HapticVibration hapticVibrationR;
     public Color originalColor;
-    public Vector3 originalPlayerPosition;
+    //public Vector3 originalPlayerPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +38,9 @@ public class DistanceTrigger : MonoBehaviour
             this.GetComponent<Renderer>().material.color = Color.blue;
 
         }
-        if (other.tag == "Player")
-        {
-            other.gameObject.transform.position = originalPlayerPosition;
-        }
+        //if (other.tag == "Player")
+        //{
+        //    other.gameObject.transform.position = originalPlayerPosition;
+        //}
     }
 }

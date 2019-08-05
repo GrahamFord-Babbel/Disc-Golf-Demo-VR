@@ -16,6 +16,6 @@ public class ScoreDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        scoreText.text = "Farthest Throw: " + scoreKeeper.score;
+        scoreText.text = "Throw: " + scoreKeeper.score;
 	}
 }
