@@ -1298,6 +1298,8 @@
     <Compile Include="Assets\Scripts\LaserPointerSwitch.cs" />
     <Compile Include="Assets\Scripts\OculusControllerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerCollisionIgnore.cs" />
+    <Compile Include="Assets\Scripts\PlayerPrefsX.cs" />
+    <Compile Include="Assets\Scripts\SavedSaleCodes.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\ThrowForce.cs" />

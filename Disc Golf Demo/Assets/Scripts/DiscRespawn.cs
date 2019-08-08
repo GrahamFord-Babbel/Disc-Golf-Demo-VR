@@ -21,6 +21,9 @@ public class DiscRespawn : MonoBehaviour
 
     public int throwCount;
 
+    //get end script to modify Discount Code
+    public SavedSaleCodes savedSaleCodes;
+
     public Scene scene;
 
     public EventManager eventManager;
@@ -52,6 +55,8 @@ public class DiscRespawn : MonoBehaviour
             {
                 collision.gameObject.SetActive(false); //or move it to another location, but likely switching to different scene at this point, so this is fine.
                 holeInOne.enabled = true;
+                savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
+                savedSaleCodes.gameOver = true;
             }
             disolveAnim.SetActive(true);
 

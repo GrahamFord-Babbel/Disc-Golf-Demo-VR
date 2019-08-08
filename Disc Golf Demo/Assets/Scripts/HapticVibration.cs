@@ -68,7 +68,7 @@ public class HapticVibration : MonoBehaviour
             //set disc velocity immediately after thrown
             OVRInput.SetControllerVibration(0.35f, 0.35f, thisController);
             eventManager.initialDiscVelocity = ((eventManager.discThrown.GetComponent<Rigidbody>().velocity.x)/50);
-            Debug.Log("intial velocity is: " + eventManager.initialDiscVelocity);
+            //Debug.Log("intial velocity is: " + eventManager.initialDiscVelocity);
            
             //set disc location upon throw
             eventManager.discLocationX = eventManager.discThrown.transform;

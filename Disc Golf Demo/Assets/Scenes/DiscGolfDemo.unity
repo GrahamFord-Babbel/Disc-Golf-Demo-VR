@@ -951,6 +951,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 0}
 --- !u!135 &340429578
 SphereCollider:
@@ -1179,6 +1182,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &487022243
 GameObject:
@@ -1973,6 +1979,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &650603596
 GameObject:
@@ -2086,6 +2095,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 2141949630}
 --- !u!1001 &723180478
 PrefabInstance:
@@ -2957,7 +2969,6 @@ MonoBehaviour:
   thisController: 0
   discRespawn: {fileID: 1235183054}
   eventManager: {fileID: 2141949630}
-  rb: {fileID: 0}
 --- !u!4 &966753093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd,
@@ -3302,6 +3313,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &1066590038
 GameObject:
@@ -3681,7 +3695,6 @@ MonoBehaviour:
   thisController: 0
   discRespawn: {fileID: 1235183054}
   eventManager: {fileID: 2141949630}
-  rb: {fileID: 0}
 --- !u!1 &1222963901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,6 +3992,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 874696970}
   disolveAnim: {fileID: 1409316608}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &1270210909
 GameObject:
@@ -4423,6 +4439,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  throwCount: 0
+  scene:
+    m_Handle: 0
   eventManager: {fileID: 0}
 --- !u!135 &1371424158
 SphereCollider:
@@ -7023,7 +7042,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 60
+        value: 5
       intVariables: []
       boolVariables: []
       stringVariables: []
