@@ -14,6 +14,8 @@ public class VrButtonInput : MonoBehaviour
     int nextSceneIndex;
     //public FsmEvent sendEvent;
 
+    public GameObject usedCodes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,11 @@ public class VrButtonInput : MonoBehaviour
     void OnVrInputDown()
     {
         SceneManager.LoadScene(nextSceneIndex);
+    }
+
+    void ActivateCodes()
+    {
+        usedCodes.SetActive(true);
     }
 
     //    void Update()

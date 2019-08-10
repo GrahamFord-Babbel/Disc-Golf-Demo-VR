@@ -207,7 +207,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &36407712
 Transform:
@@ -951,7 +951,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 0}
@@ -1182,7 +1184,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 2141949630}
@@ -1829,7 +1833,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &578141280
 MonoBehaviour:
@@ -1979,7 +1983,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 2141949630}
@@ -2095,7 +2101,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 2141949630}
@@ -2307,6 +2315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LocomotionController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619654343711518726, guid: 1df6d96452d83e041a855fa17989b08b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5619654343711518775, guid: 1df6d96452d83e041a855fa17989b08b,
         type: 3}
@@ -3313,7 +3326,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 2141949630}
@@ -3789,6 +3804,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreKeeper: {fileID: 2141949629}
   scoreText: {fileID: 1222963903}
+  usedCodesText: {fileID: 0}
+  useCodeText: {fileID: 0}
+  discRespawn: {fileID: 0}
+  savedSaleCodes: {fileID: 0}
 --- !u!1 &1234332669
 GameObject:
   m_ObjectHideFlags: 0
@@ -3992,7 +4011,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 874696970}
   disolveAnim: {fileID: 1409316608}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 2141949630}
@@ -4439,7 +4460,9 @@ MonoBehaviour:
   discLanded: 0
   discGlowGrab: {fileID: 0}
   disolveAnim: {fileID: 0}
+  activateCode: 0
   throwCount: 0
+  savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
   eventManager: {fileID: 0}
@@ -7042,7 +7065,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 5
+        value: 45
       intVariables: []
       boolVariables: []
       stringVariables: []

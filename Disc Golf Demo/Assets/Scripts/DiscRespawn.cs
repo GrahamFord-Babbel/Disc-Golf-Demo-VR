@@ -19,6 +19,8 @@ public class DiscRespawn : MonoBehaviour
     ////get discTrail
     //public HapticVibration hapticVibration;
 
+    public bool activateCode;
+
     public int throwCount;
 
     //get end script to modify Discount Code
@@ -33,6 +35,8 @@ public class DiscRespawn : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         discOriginalLocation = discRespawnLocation.transform.position;
+        holeInOne.enabled = false;
+        activateCode = false;
     }
 
     // Update is called once per frame
@@ -54,9 +58,12 @@ public class DiscRespawn : MonoBehaviour
             if (scene.buildIndex > 1)
             {
                 collision.gameObject.SetActive(false); //or move it to another location, but likely switching to different scene at this point, so this is fine.
-                holeInOne.enabled = true;
+                //holeInOne.enabled = true;
                 savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
+                holeInOne.enabled = true;
+                print("DISCOUT TEXT ACTIVATEDDDDD");
                 savedSaleCodes.gameOver = true;
+                activateCode = true;
             }
             disolveAnim.SetActive(true);
 
@@ -98,8 +105,13 @@ public class DiscRespawn : MonoBehaviour
                     //increase throw count
                     scoreKeeper.score += 1;
 
-                    // make disc glow, and active pickup column
-                    discGlowGrab.glow.SetActive(true);
+
+                    if (!holeInOne.enabled)
+                        {
+                        // make disc glow, and active pickup column
+                        discGlowGrab.glow.SetActive(true);
+                    }
+
 
 
 

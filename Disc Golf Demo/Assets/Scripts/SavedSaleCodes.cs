@@ -52,9 +52,8 @@ public class SavedSaleCodes : MonoBehaviour
 
         if (gameOver)
         {
-            //set ACCEPTABLE array to last used values, and convert array to list - FIND OUT WHERE THIS IS TAKING SO LONG, HOW TO AVOID (CREATE A WAIT?)
-            PlayerPrefsX.SetStringArray("acceptableCodes", acceptableCodes);
-
+            //set ACCEPTABLE array to last used values (by GETTING), and convert array to list - FIND OUT WHERE THIS IS TAKING SO LONG, HOW TO AVOID (CREATE A WAIT?)
+            PlayerPrefsX.GetStringArray("acceptableCodes");
             acceptableCodesList = acceptableCodes.ToList();
 
             //produce a random code to remove from acceptable list, and add to used list
