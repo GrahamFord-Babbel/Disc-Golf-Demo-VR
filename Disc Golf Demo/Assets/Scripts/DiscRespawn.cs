@@ -9,9 +9,20 @@ public class DiscRespawn : MonoBehaviour
     public GameObject discRespawnLocation;
     public Vector3 discOriginalLocation;
     public Vector3 discReturnLocation;
-    public Text holeInOne;
     public ScoreKeeper scoreKeeper;
     public bool discLanded;
+
+    //UI Components
+    public Text holeInOne;
+    public GameObject gameOverUI;
+
+
+    //teleporting to Disc Automatically components
+    public CharacterController charController;
+    public GameObject player1;
+    public Vector3 discLandedLocation;
+    public float playerFinalTeleportAdjustment;
+
 
     public DiscGlowGrab discGlowGrab;
     //public Rigidbody discRb;
@@ -36,6 +47,7 @@ public class DiscRespawn : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         discOriginalLocation = discRespawnLocation.transform.position;
         holeInOne.enabled = false;
+        gameOverUI.SetActive(false);
         activateCode = false;
     }
 
@@ -60,6 +72,7 @@ public class DiscRespawn : MonoBehaviour
                 collision.gameObject.SetActive(false); //or move it to another location, but likely switching to different scene at this point, so this is fine.
                 //holeInOne.enabled = true;
                 savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
+                gameOverUI.SetActive(true);
                 holeInOne.enabled = true;
                 print("DISCOUT TEXT ACTIVATEDDDDD");
                 savedSaleCodes.gameOver = true;
@@ -98,6 +111,9 @@ public class DiscRespawn : MonoBehaviour
             {
                 if (discLanded == false)
                 {
+                    //disables the character controller so that it won't manipulate your teleportation
+                    charController.enabled = false;
+
                     //remove velocity
                     collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -105,6 +121,18 @@ public class DiscRespawn : MonoBehaviour
                     //increase throw count
                     scoreKeeper.score += 1;
 
+                    //CONTINUE WORKING ON THIS 8.14 OR DELETE
+                    discLandedLocation = collision.gameObject.GetComponent<Transform>().position;
+
+                    //ROLLERCOASTER - needs to be infinite loop (outside above boolean qualifications)
+                    //player1.transform.position = Vector3.MoveTowards(player1.transform.position, discLandedLocation, 1);
+
+                    //OR TELEPORT
+                    //set the right height
+                    discLandedLocation.y += charController.height * 0.5f;
+
+                    player1.transform.position = discLandedLocation + new Vector3(playerFinalTeleportAdjustment,0,0);
+            
 
                     if (!holeInOne.enabled)
                         {
@@ -112,8 +140,8 @@ public class DiscRespawn : MonoBehaviour
                         discGlowGrab.glow.SetActive(true);
                     }
 
-
-
+                    //reenables the character controller 
+                    charController.enabled = true;
 
                     discLanded = true;
                 }

@@ -148,7 +148,7 @@ public class OVRGrabber : MonoBehaviour
 
 		float prevFlex = m_prevFlex;
 		// Update values from inputs
-		m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, m_controller);
+		m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller); //changed from "Hand" to "Index" - 8.15
 
 		CheckForGrabOrRelease(prevFlex);
     }
