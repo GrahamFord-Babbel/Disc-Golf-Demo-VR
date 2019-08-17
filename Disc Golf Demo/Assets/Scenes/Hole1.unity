@@ -1567,6 +1567,8 @@ MonoBehaviour:
   scoreText: {fileID: 302084404}
   usedCodesText: {fileID: 0}
   useCodeText: {fileID: 1948435895}
+  codesCalledFinished: 0
+  replayButton: {fileID: 972475412}
   discRespawn: {fileID: 8930270827223744912}
   savedSaleCodes: {fileID: 0}
 --- !u!114 &302084404
@@ -1856,6 +1858,7 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
+  replayButton: {fileID: 972475412}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
@@ -1867,6 +1870,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 2141949630}
 --- !u!1001 &469063584
 PrefabInstance:
@@ -2496,6 +2500,7 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
+  replayButton: {fileID: 972475412}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
@@ -2507,6 +2512,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &605291225
 GameObject:
@@ -2535,12 +2541,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605291225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0.769}
   m_LocalScale: {x: 0.0010962981, y: 0.0010962959, z: 0.0003653876}
   m_Children:
   - {fileID: 1948435897}
   - {fileID: 302084402}
   - {fileID: 972475411}
+  - {fileID: 1946731453}
   m_Father: {fileID: 2051077481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -2720,6 +2727,7 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
+  replayButton: {fileID: 972475412}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
@@ -2731,6 +2739,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 2141949630}
 --- !u!4 &723304762 stripped
 Transform:
@@ -3088,7 +3097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.8
+      value: 48.05
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3540,6 +3549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 972475414}
+  eventManager: {fileID: 2141949630}
+  replayGame: 0
 --- !u!65 &972475413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3566,7 +3577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3574,9 +3585,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0.015249968, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3985,6 +3996,7 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
+  replayButton: {fileID: 972475412}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
@@ -3996,6 +4008,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &1066590038
 GameObject:
@@ -4198,7 +4211,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1114453351
 BoxCollider:
@@ -4266,8 +4279,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114453350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.17, y: 1.59, z: 9.33}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 47.125, y: 0.518, z: 1.75}
+  m_LocalScale: {x: 0.35, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -4477,6 +4490,8 @@ MonoBehaviour:
   scoreText: {fileID: 1222963903}
   usedCodesText: {fileID: 0}
   useCodeText: {fileID: 0}
+  codesCalledFinished: 0
+  replayButton: {fileID: 972475412}
   discRespawn: {fileID: 8930270827223744912}
   savedSaleCodes: {fileID: 0}
 --- !u!1 &1235183049
@@ -4598,10 +4613,11 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
+  replayButton: {fileID: 972475412}
   charController: {fileID: 1646562270}
   player1: {fileID: 1646562265}
   discLandedLocation: {x: 0, y: 0, z: 0}
-  playerFinalTeleportAdjustment: 1.75
+  playerFinalTeleportAdjustment: 1
   discGlowGrab: {fileID: 1499813870}
   disolveAnim: {fileID: 0}
   activateCode: 0
@@ -4609,6 +4625,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 2141949630}
 --- !u!1001 &1257382693
 PrefabInstance:
@@ -5209,6 +5226,7 @@ MonoBehaviour:
   discLanded: 0
   holeInOne: {fileID: 0}
   gameOverUI: {fileID: 0}
+  replayButton: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
@@ -5220,6 +5238,7 @@ MonoBehaviour:
   savedSaleCodes: {fileID: 0}
   scene:
     m_Handle: 0
+  loadCountableSceneBool: 0
   eventManager: {fileID: 0}
 --- !u!135 &1371424158
 SphereCollider:
@@ -7114,6 +7133,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941662433}
   m_CullTransparentMesh: 0
+--- !u!1 &1946731452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946731453}
+  - component: {fileID: 1946731455}
+  - component: {fileID: 1946731454}
+  m_Layer: 5
+  m_Name: DiscountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1946731453
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946731452}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1.0000501, y: 1.0000488, z: 0.99992543}
+  m_Children: []
+  m_Father: {fileID: 605291226}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 68, y: -5}
+  m_SizeDelta: {x: 700, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1946731454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946731452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9160466, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "   You've Completed the Demo!\nRecieve 5% off in-store purchase\n\t\t\t\t
+    \  @Cloud9"
+--- !u!222 &1946731455
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946731452}
+  m_CullTransparentMesh: 0
 --- !u!1 &1948435894
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,7 +7244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.86690867, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7937479, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7165,8 +7264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "   You've Completed the Demo!\nRecieve 5% off in-store purchase\n\t\t\t\t
-    \  @Cloud9\n\t\t\t\t  USE CODE:"
+  m_Text: "\t\t\t\t  USE CODE:"
 --- !u!222 &1948435896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7191,8 +7289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68, y: -5}
-  m_SizeDelta: {x: 700, y: 250}
+  m_AnchoredPosition: {x: 68, y: -52}
+  m_SizeDelta: {x: 700, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1998432340 stripped
 GameObject:
@@ -8085,17 +8183,17 @@ PrefabInstance:
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.41
+      value: 47.123
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.313
+      value: 1.114
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.94
+      value: 1.757
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
@@ -8279,6 +8377,11 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 605291225}
+    - target: {fileID: 8930270826893019782, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: replayButton
+      value: 
+      objectReference: {fileID: 972475412}
     - target: {fileID: 8930270827528989469, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_IsActive

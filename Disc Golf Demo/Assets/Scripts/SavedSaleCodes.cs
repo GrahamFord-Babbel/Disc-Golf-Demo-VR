@@ -15,6 +15,9 @@ public class SavedSaleCodes : MonoBehaviour
     public List<string> usedCodesList;
     public List<string> acceptableCodesList;
 
+    //to destroy once game fully run through
+    public bool nowDestroy;
+
     //for choosing which number to appear
     public int randomCodeNumber;
 
@@ -23,10 +26,18 @@ public class SavedSaleCodes : MonoBehaviour
 
     private void Start()
     {
-
+        if (!nowDestroy)
+        {
             DontDestroyOnLoad(gameObject);
+        }
 
-            gameOver = false;
+        if (nowDestroy)
+        {
+            Destroy(gameObject);
+        }
+
+        //turning this off to prevent "replay" populating new code issue
+        gameOver = false;
             
             //instantiate Arrays
             usedCodes = new string[] { };

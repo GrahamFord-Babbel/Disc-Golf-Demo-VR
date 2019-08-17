@@ -15,6 +15,7 @@ public class DiscRespawn : MonoBehaviour
     //UI Components
     public Text holeInOne;
     public GameObject gameOverUI;
+    public ReplayButton replayButton;
 
 
     //teleporting to Disc Automatically components
@@ -38,6 +39,7 @@ public class DiscRespawn : MonoBehaviour
     public SavedSaleCodes savedSaleCodes;
 
     public Scene scene;
+    public bool loadCountableSceneBool;
 
     public EventManager eventManager;
 
@@ -54,6 +56,16 @@ public class DiscRespawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (loadCountableSceneBool)
+        //{
+
+        //    LoadCountableScene();
+        //}
+
+        if (replayButton.replayGame)
+        {
+            Destroy(savedSaleCodes.gameObject);
+        }
 
     }
 
@@ -74,9 +86,22 @@ public class DiscRespawn : MonoBehaviour
                 savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
                 gameOverUI.SetActive(true);
                 holeInOne.enabled = true;
-                print("DISCOUT TEXT ACTIVATEDDDDD");
-                savedSaleCodes.gameOver = true;
+                print("DISCOUNT TEXT ACTIVATEDDDDD");
+
+                if (!replayButton.replayGame)
+                {
+                    savedSaleCodes.gameOver = true;
+                }
+
+                //allows ScoreDisplay to show the generated code
                 activateCode = true;
+
+                //Load the next scene & as "Countable" if over 60 seconds
+                StartCoroutine(LoadCountableScene());
+                //loadCountableSceneBool = true;
+
+                //to destroy the the SavedSalesCodes once full game run through
+                savedSaleCodes.nowDestroy = true;
             }
             disolveAnim.SetActive(true);
 
@@ -151,5 +176,21 @@ public class DiscRespawn : MonoBehaviour
             }
         }
 
+
+
+    }
+
+    IEnumerator LoadCountableScene()
+    {
+        //denotes the game was not "replayed," track codes again
+        Debug.Log("EndGameLoad, only happened once");
+        yield return new WaitForSeconds(5);
+        Debug.Log("not waiting for 10 seconds");
+
+        replayButton.replayGame = false;
+        loadCountableSceneBool = false;
+        savedSaleCodes.nowDestroy = true;
+        Destroy(savedSaleCodes.gameObject);
+        SceneManager.LoadScene(0);
     }
 }

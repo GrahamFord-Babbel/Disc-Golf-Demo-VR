@@ -24,7 +24,7 @@ namespace HutongGames.PlayMaker.Actions
         // Code that runs every frame.
         public override void OnEnter()
         {
-
+            
             button = (UnityEngine.UI.Button)gameButtonGui.Value;
             button.OnSelect(null);
 

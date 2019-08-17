@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.5, y: 38.2}
+  m_AnchoredPosition: {x: 39.5, y: 21.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231142325
@@ -1163,7 +1163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73.6, y: 45.1}
+  m_AnchoredPosition: {x: -73.6, y: 22.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292527511
@@ -2091,6 +2091,7 @@ MonoBehaviour:
   usedCodes: []
   usedCodesList: []
   acceptableCodesList: []
+  nowDestroy: 0
   randomCodeNumber: 0
   gameOver: 0
 --- !u!4 &509634793
@@ -2257,6 +2258,8 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   usedCodesText: {fileID: 544142368}
   useCodeText: {fileID: 0}
+  codesCalledFinished: 0
+  replayButton: {fileID: 0}
   discRespawn: {fileID: 0}
   savedSaleCodes: {fileID: 509634792}
 --- !u!114 &544142368
@@ -2734,8 +2737,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 86}
-  m_SizeDelta: {x: 250, y: 60}
+  m_AnchoredPosition: {x: -70.3, y: 20}
+  m_SizeDelta: {x: 250, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222963903
 MonoBehaviour:
@@ -2770,9 +2773,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: '
-
-    Disc Demo'
+  m_Text: "\n\t\t\tDisc Demo\n(Use \"Trigger\" to START)"
 --- !u!222 &1222963904
 CanvasRenderer:
   m_ObjectHideFlags: 0

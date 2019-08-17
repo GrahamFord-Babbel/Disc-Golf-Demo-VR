@@ -9,11 +9,15 @@ public class ScoreDisplay : MonoBehaviour {
     public Text scoreText;
     public Text usedCodesText;
     public Text useCodeText;
+    public bool codesCalledFinished;
 
     Scene scene;
 
     //uses the array length to find the last code used in USED CODES
     int lastSaved;
+
+    //find if replayed
+    public ReplayButton replayButton;
 
     public DiscRespawn discRespawn;
 
@@ -30,30 +34,41 @@ public class ScoreDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (scene.buildIndex == 0)
+        if (scene.buildIndex == 0 & !codesCalledFinished)
         {
             foreach (string i in savedSaleCodes.usedCodes)
             {
                 usedCodesText.text = usedCodesText.text + " NEW: " + i;
             }
+            codesCalledFinished = true;
         }
 
         if (scene.buildIndex == 2)
         {
             if (discRespawn.activateCode == true)
             {
-                savedSaleCodes = discRespawn.savedSaleCodes;
-                lastSaved = savedSaleCodes.usedCodes.Length;
-                print("This is last saved:" + lastSaved);
 
-                useCodeText.text = useCodeText.text + " " + savedSaleCodes.usedCodes[lastSaved - 1];
-
-                //delete if above works
-                //foreach (string i in discRespawn.savedSaleCodes.usedCodes)
+                //if (!replayButton.replayGame)
                 //{
-                //    useCodeText.text =  "You've Completed the Demo!              Recieve 5 % off in-store purchase                      @Cloud9               USE CODE:" + i;
+                    savedSaleCodes = discRespawn.savedSaleCodes;
+                    lastSaved = savedSaleCodes.usedCodes.Length;
+                    print("This is last saved:" + lastSaved);
+
+                    useCodeText.text = useCodeText.text + " " + savedSaleCodes.usedCodes[lastSaved - 1];
+
+                    //delete if above works
+                    //foreach (string i in discRespawn.savedSaleCodes.usedCodes)
+                    //{
+                    //    useCodeText.text =  "You've Completed the Demo!              Recieve 5 % off in-store purchase                      @Cloud9               USE CODE:" + i;
+                    //}
+                    discRespawn.activateCode = false;
                 //}
-                discRespawn.activateCode = false;
+
+                //if (replayButton.replayGame)
+                //{
+                //    useCodeText.text = useCodeText.text + " " + savedSaleCodes.usedCodes[lastSaved - 1];
+                //}
+                
             }
 
         }
