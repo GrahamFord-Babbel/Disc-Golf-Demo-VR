@@ -13,6 +13,7 @@ public class VrButtonInput : MonoBehaviour
     //public FsmObject VrController;
     int nextSceneIndex;
     //public FsmEvent sendEvent;
+    public SavedSaleCodes savedSaleCodes;
 
     public GameObject usedCodes;
 
@@ -68,6 +69,11 @@ public class VrButtonInput : MonoBehaviour
     void ActivateCodes()
     {
         usedCodes.SetActive(true);
+    }
+
+    void EraseCodes()
+    {
+        savedSaleCodes.ClearCodes();
     }
 
     //    void Update()

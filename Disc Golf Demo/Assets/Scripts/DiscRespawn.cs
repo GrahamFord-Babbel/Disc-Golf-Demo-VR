@@ -184,7 +184,7 @@ public class DiscRespawn : MonoBehaviour
     {
         //denotes the game was not "replayed," track codes again
         Debug.Log("EndGameLoad, only happened once");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(20);
         Debug.Log("not waiting for 10 seconds");
 
         replayButton.replayGame = false;

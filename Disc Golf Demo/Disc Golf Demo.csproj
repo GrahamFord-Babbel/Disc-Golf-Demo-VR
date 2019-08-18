@@ -1869,6 +1869,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scenes\TrashScriptTelTest.cs" />
     <Compile Include="Assets\Scripts\ButtonFunctions.cs" />
     <Compile Include="Assets\Scripts\DisableGuiButtonHighlightState.cs" />
     <Compile Include="Assets\Scripts\DiscGlowGrab.cs" />
@@ -1884,6 +1885,7 @@
     <Compile Include="Assets\Scripts\OculusControllerInput.cs" />
     <Compile Include="Assets\Scripts\PlayerCollisionIgnore.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsX.cs" />
+    <Compile Include="Assets\Scripts\ReplayButton.cs" />
     <Compile Include="Assets\Scripts\SavedSaleCodes.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
@@ -1947,6 +1949,7 @@
     <None Include="Assets\PlayMaker\Readme.txt" />
     <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
     <None Include="Assets\PlayMaker\Templates\Readme.txt" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\RockVR\Video\Shaders\CopyReverse.shader" />
     <None Include="Assets\RockVR\Video\Shaders\Cubemap2Equirectangular.shader" />
     <None Include="Assets\RockVR\Video\Shaders\Cubemap2EquirectangularPro.shader" />

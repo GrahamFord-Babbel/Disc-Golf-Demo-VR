@@ -780,6 +780,7 @@
     <None Include="Assets\PlayMaker\Readme.txt" />
     <None Include="Assets\PlayMaker\Resources\PlayMakerAssemblies.txt" />
     <None Include="Assets\PlayMaker\Templates\Readme.txt" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\RockVR\Video\Shaders\CopyReverse.shader" />
     <None Include="Assets\RockVR\Video\Shaders\Cubemap2Equirectangular.shader" />
     <None Include="Assets\RockVR\Video\Shaders\Cubemap2EquirectangularPro.shader" />

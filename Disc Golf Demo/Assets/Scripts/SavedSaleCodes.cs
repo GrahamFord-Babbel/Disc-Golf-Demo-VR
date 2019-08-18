@@ -60,7 +60,6 @@ public class SavedSaleCodes : MonoBehaviour
     void Update()
     {
 
-
         if (gameOver)
         {
             //set ACCEPTABLE array to last used values (by GETTING), and convert array to list - FIND OUT WHERE THIS IS TAKING SO LONG, HOW TO AVOID (CREATE A WAIT?)
@@ -137,4 +136,13 @@ public static void PrintValues(Array myArr, char mySeparator)
     Console.WriteLine();
     }
 
+    public void ClearCodes()
+    {
+        //resets array to 0
+        usedCodes = new string[] { };
+        usedCodesList.Clear();
+
+        //saves array
+        PlayerPrefsX.SetStringArray("usedCodes", usedCodes);
+    }
 }
