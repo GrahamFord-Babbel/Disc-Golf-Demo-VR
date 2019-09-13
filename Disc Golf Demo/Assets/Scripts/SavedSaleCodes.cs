@@ -94,7 +94,7 @@ public class SavedSaleCodes : MonoBehaviour
 
 
             //save the new arrays
-            PlayerPrefsX.SetStringArray("acceptableCodes", acceptableCodes) ;
+            PlayerPrefsX.SetStringArray("acceptableCodes", acceptableCodes);
             PlayerPrefsX.SetStringArray("usedCodes", usedCodes);
 
             //confirm pass
