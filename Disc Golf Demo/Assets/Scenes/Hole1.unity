@@ -3351,7 +3351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.05
+      value: 48.4
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6818,7 +6818,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 2
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 964585791}
   m_grabVolumes:
@@ -7758,7 +7757,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 1.5
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 1203729423}
   m_grabVolumes:
@@ -8628,7 +8626,7 @@ PrefabInstance:
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.114
+      value: 1.304
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}

@@ -51,6 +51,13 @@ public class DiscRespawn : MonoBehaviour
         holeInOne.enabled = false;
         gameOverUI.SetActive(false);
         activateCode = false;
+
+        //grab the score from previous hole
+        if (scene.buildIndex == 3)
+        {
+            scoreKeeper.score = PlayerPrefs.GetFloat("Score", 0);
+
+        }
     }
 
     // Update is called once per frame
@@ -62,9 +69,10 @@ public class DiscRespawn : MonoBehaviour
         //    LoadCountableScene();
         //}
 
+        //deletes the savedSalesCodes so that no Code is collected twice for that 1 user (probably a bit drastic)
         if (replayButton.replayGame)
         {
-            Destroy(savedSaleCodes.gameObject);
+            Destroy(savedSaleCodes.gameObject); //maybe shouldn't destroy? maybe do the same thing as when autoreloads? 
         }
 
     }
@@ -81,27 +89,54 @@ public class DiscRespawn : MonoBehaviour
             //if its the driving range, then the below wont happen so that the player can continue to throw from start position
             if (scene.buildIndex > 1)
             {
-                collision.gameObject.SetActive(false); //or move it to another location, but likely switching to different scene at this point, so this is fine.
-                //holeInOne.enabled = true;
-                savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
-                gameOverUI.SetActive(true);
-                holeInOne.enabled = true;
-                print("DISCOUNT TEXT ACTIVATEDDDDD");
-
-                if (!replayButton.replayGame)
+                if (scene.buildIndex == 2)
                 {
-                    savedSaleCodes.gameOver = true;
+                    //increase throw count
+                    scoreKeeper.score += 1;
+
+                    //collect score of 1st hole - tbd
+                    PlayerPrefs.SetFloat("Score", scoreKeeper.score);
+
+                    //load next scene
+                    SceneManager.LoadScene(3);
                 }
 
-                //allows ScoreDisplay to show the generated code
-                activateCode = true;
+                else if (scene.buildIndex == 3)
+                {
 
-                //Load the next scene & as "Countable" if over 60 seconds
-                StartCoroutine(LoadCountableScene());
-                //loadCountableSceneBool = true;
+                    //increase throw count
+                    scoreKeeper.score += 1;
+                    //save score
+                    PlayerPrefs.SetFloat("Score", scoreKeeper.score);
 
-                //to destroy the the SavedSalesCodes once full game run through
-                savedSaleCodes.nowDestroy = true;
+                    collision.gameObject.SetActive(false); //or move it to another location, but likely switching to different scene at this point, so this is fine.
+                    
+                    //find the list with all the saved sales codes (to populate the users code)
+                    savedSaleCodes = GameObject.Find("SavedSaleCodes").GetComponent<SavedSaleCodes>();
+
+                    //activate game over UI
+                    gameOverUI.SetActive(true);
+
+                    //mark boolean that game is over
+                    holeInOne.enabled = true;
+
+                    print("DISCOUNT TEXT ACTIVATEDDDDD");
+
+                    if (!replayButton.replayGame)
+                    {
+                        savedSaleCodes.gameOver = true;
+                    }
+
+                    //allows ScoreDisplay to show the generated code
+                    activateCode = true;
+
+                    //Load the next scene & as "Countable" if over 60 seconds
+                    StartCoroutine(LoadCountableScene());
+                    //loadCountableSceneBool = true;
+
+                    //to destroy the the SavedSalesCodes once full game run through
+                    savedSaleCodes.nowDestroy = true;
+                }
             }
             disolveAnim.SetActive(true);
 
@@ -184,7 +219,7 @@ public class DiscRespawn : MonoBehaviour
     {
         //denotes the game was not "replayed," track codes again
         //Debug.Log("EndGameLoad, only happened once");
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(15);
         //Debug.Log("not waiting for 10 seconds");
 
         replayButton.replayGame = false;

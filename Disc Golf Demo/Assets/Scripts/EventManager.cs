@@ -16,13 +16,13 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 3)
         {
             nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         }
         else
         {
-            nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 2;
+            nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 3;
         }
 
     }

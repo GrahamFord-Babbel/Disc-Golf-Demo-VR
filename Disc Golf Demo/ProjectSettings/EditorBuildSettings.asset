@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 6d58e9f0528448a4c9879805c29982b7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Intro UI.unity
     guid: 7683df3f7bd1298489526c126f7259d4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DiscGolfDemo.unity
     guid: 5dec2863108d37245880b090c06d0847
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Hole1.unity
     guid: 6e050ceeb3ebd3349b2c54fe94963a7c
   - enabled: 1

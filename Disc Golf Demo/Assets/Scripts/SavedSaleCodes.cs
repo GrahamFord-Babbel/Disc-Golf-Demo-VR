@@ -42,11 +42,11 @@ public class SavedSaleCodes : MonoBehaviour
             //instantiate Arrays
             usedCodes = new string[] { };
 
-            acceptableCodes = new string[] { "X5eR6", "FrTs9", "7OipQ", "2tHji", "3QemV" };
+            acceptableCodes = new string[] { "Vulture1", "Innova2", "Dynamic3", "Latitude645","Discmania6","Gateway7","Westside8", "Millenium9","Legacy10","Prodigy11","MVP12","Discraft13","Legacy14","Vibram15","Pridiscus16","ABC17","DGA18","Daredevil19","Ching20","Crosslap21","UB22","Aerobie23","RIP24","Discwing25","Lightning26","DGK27","Kastaplast28","Wham-O27","Quest28","Salient29","MVP30" }; //make these codes into names of frisbees? 1 2 3 - old style: "3QemV" 
 
-            //set USED array values to previously used in last game
-    
-            usedCodes = PlayerPrefsX.GetStringArray("usedCodes");
+        //set USED array values to previously used in last game
+
+        usedCodes = PlayerPrefsX.GetStringArray("usedCodes");
             
             
             //make USED Arrays into Lists
@@ -59,11 +59,11 @@ public class SavedSaleCodes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //gameOver is activated in the scripts: ReplayButton or DiscRespawn
         if (gameOver)
         {
-            //set ACCEPTABLE array to last used values (by GETTING), and convert array to list - FIND OUT WHERE THIS IS TAKING SO LONG, HOW TO AVOID (CREATE A WAIT?)
-            PlayerPrefsX.GetStringArray("acceptableCodes");
+            //set ACCEPTABLE array to last used values (by GETTING), and convert array to list 
+            acceptableCodes = PlayerPrefsX.GetStringArray("acceptableCodes"); // justed added the first part, lets see if that messes things up 9.21
             acceptableCodesList = acceptableCodes.ToList();
 
             //produce a random code to remove from acceptable list, and add to used list
@@ -71,7 +71,7 @@ public class SavedSaleCodes : MonoBehaviour
             //print(randomCodeNumber);
 
             //confirm not pass
-            Debug.Log("gameOverSave not fully activated");
+            //Debug.Log("gameOverSave not fully activated");
 
  
             //convert into LIST, add random from accaptable array
@@ -142,7 +142,15 @@ public static void PrintValues(Array myArr, char mySeparator)
         usedCodes = new string[] { };
         usedCodesList.Clear();
 
-        //saves array
+        //refill acceptable Codes
+        acceptableCodes = new string[] { "Vulture1", "Innova2", "Dynamic3", "Latitude645", "Discmania6", "Gateway7", "Westside8", "Millenium9", "Legacy10", "Prodigy11", "MVP12", "Discraft13", "Legacy14", "Vibram15", "Pridiscus16", "ABC17", "DGA18", "Daredevil19", "Ching20", "Crosslap21", "UB22", "Aerobie23", "RIP24", "Discwing25", "Lightning26", "DGK27", "Kastaplast28", "Wham-O27", "Quest28", "Salient29", "MVP30" }; //if above edited, edit this too
+
+
+        //reset the high score
+        PlayerPrefs.SetFloat("highScore", 0);
+
+        //saves arrays
         PlayerPrefsX.SetStringArray("usedCodes", usedCodes);
+        PlayerPrefsX.SetStringArray("acceptableCodes", acceptableCodes);
     }
 }

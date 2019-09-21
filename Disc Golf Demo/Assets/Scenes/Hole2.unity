@@ -4523,7 +4523,7 @@ GameObject:
   - component: {fileID: 1114453352}
   - component: {fileID: 1114453351}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pedestal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7031,7 +7031,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 2
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 964585791}
   m_grabVolumes:
@@ -7947,7 +7946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68, y: -5}
+  m_AnchoredPosition: {x: -6, y: -5}
   m_SizeDelta: {x: 700, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946731454
@@ -7983,8 +7982,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "   You've Completed the Demo!\nRecieve 5% off in-store purchase\n\t\t\t\t
-    \  @Cloud9"
+  m_Text: "        You've Completed the Demo!\nRecieve 20% off in-store disc golf
+    purchase\n\t\t\t\t       @Cloud9"
 --- !u!222 &1946731455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8044,7 +8043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "\t\t\t\t  USE CODE:"
+  m_Text: "\t\tDISCOUNT CODE:"
 --- !u!222 &1948435896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8069,8 +8068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68, y: -52}
-  m_SizeDelta: {x: 700, y: 50}
+  m_AnchoredPosition: {x: 128, y: -52}
+  m_SizeDelta: {x: 900, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1998432340 stripped
 GameObject:
@@ -8098,7 +8097,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 1.5
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 1203729423}
   m_grabVolumes:
@@ -8968,7 +8966,7 @@ PrefabInstance:
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.114
+      value: 1.315
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}

@@ -5953,7 +5953,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 1.75
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 964585791}
   m_grabVolumes:
@@ -6414,7 +6413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  throwGain: 1.75
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 1203729423}
   m_grabVolumes:
@@ -7310,7 +7308,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 2
+        value: 45
       intVariables: []
       boolVariables: []
       stringVariables: []

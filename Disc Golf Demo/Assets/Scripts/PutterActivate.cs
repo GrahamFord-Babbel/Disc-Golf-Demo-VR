@@ -31,6 +31,7 @@ public class PutterActivate : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        //activates the smaller blue disc, with different physics so that its easier to shoot into the goal when close
         if (other.name == "DriverDisc:SS")
         {
             Debug.Log("disc collided");
