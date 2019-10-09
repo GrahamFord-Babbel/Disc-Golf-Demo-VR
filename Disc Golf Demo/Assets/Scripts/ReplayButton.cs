@@ -12,23 +12,23 @@ public class ReplayButton : MonoBehaviour
     public EventManager eventManager;
     public bool replayGame;
 
-
     // once clicked, transition
     IEnumerator OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand") 
         {
-            button.Select();
+                button.Select();
 
-            //not sure what this would be for, but forums use it
-            //button.OnSelect(null);
+                //not sure what this would be for, but forums use it
+                //button.OnSelect(null);
 
-            //mark as a "replayable" version
-            replayGame = true;
+                //mark as a "replayable" version
+                replayGame = true;
 
-            yield return new WaitForSeconds(1);
-            eventManager.LoadNextScene();
-
+                yield return new WaitForSeconds(1);
+                eventManager.LoadNextScene();
+            
+            //other wise teleport user bc they touched disc & attach disc to their gripped hand
         }    
 
     }

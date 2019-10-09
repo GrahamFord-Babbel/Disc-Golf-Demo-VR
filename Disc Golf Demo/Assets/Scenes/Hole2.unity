@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -37,14 +37,14 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 24c9636ced90ce2429ef1b7f7cabb296,
+  m_LightingDataAsset: {fileID: 112000000, guid: e7edad6b558641b43841abc5982ee088,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -141,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &43469017
 GameObject:
@@ -196,7 +196,7 @@ Transform:
   - {fileID: 1032892619}
   - {fileID: 536853521}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46119904
 GameObject:
@@ -256,7 +256,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -17.5, y: 160.8, z: 0}
 --- !u!1 &46780782
 GameObject:
@@ -896,7 +896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1179,75 +1179,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154098134}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &170076733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 170076735}
-  - component: {fileID: 170076734}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!108 &170076734
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170076733}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &170076735
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &186841642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,11 +1812,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -2264,7 +2196,7 @@ Transform:
   m_Children:
   - {fileID: 1654418811}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -17.5, y: 100.26, z: 0}
 --- !u!114 &504028562
 MonoBehaviour:
@@ -2496,7 +2428,7 @@ Transform:
   - {fileID: 154098135}
   - {fileID: 337683438}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589469498
 GameObject:
@@ -2610,11 +2542,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -2635,6 +2568,7 @@ GameObject:
   - component: {fileID: 605291229}
   - component: {fileID: 605291228}
   - component: {fileID: 605291227}
+  - component: {fileID: 605291230}
   m_Layer: 5
   m_Name: GameCompleteUI
   m_TagString: Untagged
@@ -2725,6 +2659,66 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &605291230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605291225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -745406591, guid: 220224b43fc464c28bc0e8de8f54a432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Trigger:
+    m_IsTriggerExpanded: 1
+    m_Type: 0
+    m_LifecycleEvent: 3
+    m_ApplyRules: 1
+    m_Rules:
+      m_Rules: []
+    m_TriggerBool: 0
+    m_InitTime: 5
+    m_RepeatTime: 5
+    m_Repetitions: 1
+    repetitionCount: 0
+  m_EventPayload:
+    m_IsEventExpanded: 1
+    m_StandardEventType: CustomEvent
+    m_Parameters:
+      m_Parameters:
+      - m_RequirementType: 0
+        m_GroupID: 
+        m_Tooltip: 
+        m_Name: Throws
+        m_Value:
+          m_EditingCustomValue: 0
+          m_PopupIndex: 0
+          m_CustomValue: 
+          m_FixedType: 0
+          m_EnumType: 
+          m_EnumTypeIsCustomizable: 0
+          m_CanDisable: 0
+          m_PropertyType: 2
+          m_ValueType: System.Single
+          m_Value: 
+          m_Target:
+            m_Target: {fileID: 2141949629}
+            m_Path: score
+            m_ValidTypeNames:
+            - System.Int32
+            - System.Boolean
+            - System.Decimal
+            - System.Double
+            - System.Single
+            - System.Int64
+            - System.Int16
+            - System.String
+            - enum
+            m_Type: System.Single
+            m_EnumType: 
+    m_Name: Lvl2Finished
 --- !u!1 &650603596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,11 +2831,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -3097,6 +3092,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 799520610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &858931190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6767848502070349710, guid: 73f375bd5b25a054584679379549ad4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1921510169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &858931192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6767848502447815984, guid: 73f375bd5b25a054584679379549ad4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1921510169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858931190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92261466e507ce943a0137e77ad5fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &866876197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8930270827528989469, guid: 9a94e5cfdd677504ca169187e84e35a4,
@@ -3390,6 +3403,12 @@ MonoBehaviour:
   hapticVibrationL: {fileID: 1203729427}
   hapticVibrationR: {fileID: 964585795}
   originalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &901384948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6002459153417127987, guid: 0e9ba759c171989408e57e14e179e3d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 7391190343859422910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &927858791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3467,7 +3486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4171,7 +4190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4311,11 +4330,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -4474,7 +4494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014291504098, guid: 1b474618c4fc5f54e8a8b803c8352c7d, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4000014291504098, guid: 1b474618c4fc5f54e8a8b803c8352c7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4599,7 +4619,7 @@ Transform:
   m_LocalScale: {x: 0.35, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203729422
 GameObject:
@@ -4911,7 +4931,7 @@ Transform:
   - {fileID: 1066590039}
   - {fileID: 723304762}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1235183054
 MonoBehaviour:
@@ -4933,11 +4953,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 858931192}
   charController: {fileID: 1646562270}
   player1: {fileID: 1646562265}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 1
-  discGlowGrab: {fileID: 1499813870}
+  teleportationUIDisc: {fileID: 858931190}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -5674,11 +5695,12 @@ MonoBehaviour:
   holeInOne: {fileID: 0}
   gameOverUI: {fileID: 0}
   replayButton: {fileID: 0}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -5965,7 +5987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityMod: -1.25
   putterActivate: {fileID: 1290499584}
-  putterGravityMod: -5
+  putterGravityMod: -8
 --- !u!4 &1458377343
 Transform:
   m_ObjectHideFlags: 0
@@ -5978,7 +6000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1468550474
 PrefabInstance:
@@ -6073,6 +6095,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7391190343859422910}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1471287998
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471287996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.29
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1483724394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6160,18 +6195,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1483724394}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1499813870 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7391190343859422908, guid: 0e9ba759c171989408e57e14e179e3d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 7391190343859422910}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5d732a84126c24ba4b1c6623898b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1528012728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6317,11 +6340,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -6433,7 +6457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b472c24287e417d4cbe8ff5fcffc17e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6585,7 +6609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -17.5, y: 100.26, z: 0}
 --- !u!114 &1612133679
 MonoBehaviour:
@@ -7037,6 +7061,7 @@ MonoBehaviour:
   - {fileID: 964585792}
   m_controller: 2
   m_parentTransform: {fileID: 0}
+  throwMultiplier: 1.5
 --- !u!54 &1695781316
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7402,11 +7427,12 @@ MonoBehaviour:
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
+  teleportUI: {fileID: 0}
   charController: {fileID: 0}
   player1: {fileID: 0}
   discLandedLocation: {x: 0, y: 0, z: 0}
   playerFinalTeleportAdjustment: 0
-  discGlowGrab: {fileID: 0}
+  teleportationUIDisc: {fileID: 0}
   disolveAnim: {fileID: 0}
   activateCode: 0
   throwCount: 0
@@ -7652,6 +7678,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1920099941}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1921510169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 966753093}
+    m_Modifications:
+    - target: {fileID: 6767848502070349710, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_Name
+      value: TranslucentUIDisc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502447815984, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: discRespawn
+      value: 
+      objectReference: {fileID: 1235183054}
+    - target: {fileID: 6767848502447815984, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: retrievableDisc
+      value: 
+      objectReference: {fileID: 1471287996}
+    - target: {fileID: 6767848502447815984, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 901384948}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848502070842286, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73f375bd5b25a054584679379549ad4e, type: 3}
 --- !u!1001 &1933982400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8103,6 +8213,7 @@ MonoBehaviour:
   - {fileID: 1203729424}
   m_controller: 1
   m_parentTransform: {fileID: 0}
+  throwMultiplier: 1.5
 --- !u!54 &1998432343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8505,6 +8616,7 @@ GameObject:
   - component: {fileID: 2141949628}
   - component: {fileID: 2141949629}
   - component: {fileID: 2141949630}
+  - component: {fileID: 2141949631}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8558,7 +8670,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2141949628
 AudioSource:
@@ -8694,6 +8806,18 @@ MonoBehaviour:
   rightHand: 1
   initialDiscVelocity: 0
   discLocationX: {fileID: 0}
+--- !u!114 &2141949631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1792170882692357211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8749,7 +8873,7 @@ PrefabInstance:
     - target: {fileID: 1792170884146847674, guid: e4465c35491a2d3428c7cf3115df1339,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1792170884146847674, guid: e4465c35491a2d3428c7cf3115df1339,
         type: 3}
@@ -8828,7 +8952,7 @@ PrefabInstance:
     - target: {fileID: 4972097388589705219, guid: ac004024bf52a7d4aad8dfe89daffc16,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4972097388589705219, guid: ac004024bf52a7d4aad8dfe89daffc16,
         type: 3}
@@ -8912,7 +9036,7 @@ PrefabInstance:
     - target: {fileID: 5619654343711518775, guid: 1df6d96452d83e041a855fa17989b08b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5619654343711518775, guid: 1df6d96452d83e041a855fa17989b08b,
         type: 3}
@@ -8996,7 +9120,7 @@ PrefabInstance:
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
@@ -9031,7 +9155,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7391190344717108605, guid: 0e9ba759c171989408e57e14e179e3d7,
+        type: 3}
+      propertyPath: m_grabPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1471287998}
+    m_RemovedComponents:
+    - {fileID: 7391190344717108481, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
 --- !u!1001 &8930270827223744911
 PrefabInstance:

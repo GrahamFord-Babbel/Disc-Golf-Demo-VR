@@ -26,7 +26,7 @@ public class DiscGlowGrab : MonoBehaviour
         if (other.tag == "Hand")
         {
             glow.SetActive(false);
-            retrievableDisc.transform.position = other.transform.position;
+            //retrievableDisc.transform.position = other.transform.position;
         }
 
     }

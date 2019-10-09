@@ -16,6 +16,7 @@ public class DiscRespawn : MonoBehaviour
     public Text holeInOne;
     public GameObject gameOverUI;
     public ReplayButton replayButton;
+    public TeleportUI teleportUI;
 
 
     //teleporting to Disc Automatically components
@@ -23,9 +24,10 @@ public class DiscRespawn : MonoBehaviour
     public GameObject player1;
     public Vector3 discLandedLocation;
     public float playerFinalTeleportAdjustment;
+    public GameObject teleportationUIDisc;
 
 
-    public DiscGlowGrab discGlowGrab;
+    //public DiscGlowGrab discGlowGrab;
     //public Rigidbody discRb;
     public GameObject disolveAnim; //some kind of particle effect that explodes to let people know you scored
     ////get discTrail
@@ -51,6 +53,7 @@ public class DiscRespawn : MonoBehaviour
         holeInOne.enabled = false;
         gameOverUI.SetActive(false);
         activateCode = false;
+        teleportationUIDisc.SetActive(false);
 
         //grab the score from previous hole
         if (scene.buildIndex == 3)
@@ -171,39 +174,31 @@ public class DiscRespawn : MonoBehaviour
             {
                 if (discLanded == false)
                 {
-                    //disables the character controller so that it won't manipulate your teleportation
-                    charController.enabled = false;
 
                     //remove velocity
                     collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-
                     //increase throw count
                     scoreKeeper.score += 1;
 
-                    //CONTINUE WORKING ON THIS 8.14 OR DELETE
+                    //mark location of disc landed
                     discLandedLocation = collision.gameObject.GetComponent<Transform>().position;
 
-                    //ROLLERCOASTER - needs to be infinite loop (outside above boolean qualifications)
-                    //player1.transform.position = Vector3.MoveTowards(player1.transform.position, discLandedLocation, 1);
-
-                    //OR TELEPORT
-                    //set the right height
-                    discLandedLocation.y += charController.height * 0.5f;
-
-                    player1.transform.position = discLandedLocation + new Vector3(playerFinalTeleportAdjustment,0,0);
-            
-
                     if (!holeInOne.enabled)
-                        {
+                    {
                         // make disc glow, and active pickup column
-                        discGlowGrab.glow.SetActive(true);
+                        teleportUI.glow.SetActive(true);
                     }
 
-                    //reenables the character controller 
-                    charController.enabled = true;
+                    //TeleportPlayerOnUIDiscTouch(); //REACTIVATE THIS IF WANT TO GO BACK TO NORMAL TELEPORT (PERHAPS A/B Test) 10.2
 
+                    //enable the translucent disc infront of player - build boolean for collision on translucent disc to port (per below)
+                    teleportationUIDisc.SetActive(true); ////DEACTIVATE THIS IF WANT TO GO BACK TO NORMAL TELEPORT (PERHAPS A/B Test) 10.2
+
+                    //closes the loop, so function doesnt run again
                     discLanded = true;
+
+
                 }
       
 
@@ -213,6 +208,25 @@ public class DiscRespawn : MonoBehaviour
 
 
 
+    }
+
+    public void TeleportPlayerOnUIDiscTouch()
+    {
+        //disables the character controller so that it won't manipulate your teleportation
+        charController.enabled = false;
+
+
+        //set the right height
+        discLandedLocation.y += charController.height * 0.5f;
+
+        // TELEPORT user to disc landed location
+        player1.transform.position = discLandedLocation; // + new Vector3(playerFinalTeleportAdjustment, 0, 0); //REACTIVATE the new vector3 for A/B Test 10.2
+
+
+        //reenables the character controller 
+        charController.enabled = true;
+
+        teleportationUIDisc.SetActive(false);
     }
 
     IEnumerator LoadCountableScene()

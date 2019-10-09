@@ -1958,6 +1958,7 @@
     <Compile Include="Assets\Scripts\ThrowForce.cs" />
     <Compile Include="Assets\Scripts\ThrowForceHole1.cs" />
     <Compile Include="Assets\Scripts\VrButtonInput.cs" />
+    <Compile Include="Assets\TeleportUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
