@@ -8,6 +8,7 @@ TagManager:
   - Hand
   - Goal
   - savedSalesCodes
+  - HandAnchor
   layers:
   - Default
   - TransparentFX

@@ -17,6 +17,9 @@ public class ScoreKeeper : MonoBehaviour {
     //to see that disc has landed, reset score (or think about listing the highest score)
     public DiscRespawn discRespawn;
 
+    //for disabling pedestal so users don't hit it with first throw
+    public GameObject pedestal;
+
 
     public EventManager eventManager;
 
@@ -25,6 +28,7 @@ public class ScoreKeeper : MonoBehaviour {
     void Start ()
     {
         DontDestroyOnLoad(gameObject);
+        pedestal = GameObject.Find("Pedestal");
 
 	}
 	
@@ -40,6 +44,9 @@ public class ScoreKeeper : MonoBehaviour {
         {
             discGrabbedScoreKeeper = true;
             discA = eventManager.discThrown.transform;
+
+            //disable pedestal
+            pedestal.SetActive(false);
         }
 
         else if(hapticVibrationR.discGrabbed == true)
@@ -47,6 +54,8 @@ public class ScoreKeeper : MonoBehaviour {
             discGrabbedScoreKeeper = true;
             discA = eventManager.discThrown.transform;
 
+            //disable pedestal
+            pedestal.SetActive(false);
         }
 
         if (discGrabbedScoreKeeper && discRespawn.discLanded != true)
@@ -57,5 +66,6 @@ public class ScoreKeeper : MonoBehaviour {
             }
 
         }
+        
     }
 }

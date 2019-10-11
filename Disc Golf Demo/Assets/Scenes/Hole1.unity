@@ -3522,6 +3522,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 134650, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_TagString
+      value: HandAnchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 168962, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: m_TagString
+      value: HandAnchor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
 --- !u!1 &945699194
@@ -4549,7 +4557,7 @@ GameObject:
   - component: {fileID: 1114453352}
   - component: {fileID: 1114453351}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Pedestal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7106,6 +7114,7 @@ MonoBehaviour:
   - {fileID: 964585792}
   m_controller: 2
   m_parentTransform: {fileID: 0}
+  eventSystem: {fileID: 0}
   throwMultiplier: 1.5
 --- !u!54 &1695781316
 Rigidbody:
@@ -8053,6 +8062,7 @@ MonoBehaviour:
   - {fileID: 1203729424}
   m_controller: 1
   m_parentTransform: {fileID: 0}
+  eventSystem: {fileID: 0}
   throwMultiplier: 1.58
 --- !u!54 &1998432343
 Rigidbody:
@@ -8537,6 +8547,7 @@ GameObject:
   - component: {fileID: 2141949628}
   - component: {fileID: 2141949629}
   - component: {fileID: 2141949630}
+  - component: {fileID: 2141949632}
   - component: {fileID: 2141949631}
   m_Layer: 0
   m_Name: EventSystem
@@ -8709,6 +8720,7 @@ MonoBehaviour:
   hapticVibrationR: {fileID: 964585795}
   discGrabbedScoreKeeper: 0
   discRespawn: {fileID: 1235183054}
+  pedestal: {fileID: 0}
   eventManager: {fileID: 2141949630}
 --- !u!114 &2141949630
 MonoBehaviour:
@@ -8739,6 +8751,23 @@ MonoBehaviour:
   m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2141949632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768f7f13fd392624987ca87498b426ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 14
+  glide: 0
+  turn: 0
+  fade: 0
+  throwHands: []
 --- !u!1001 &1792170882692357211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9173,6 +9202,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7391190343859422908, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
     - {fileID: 7391190344717108481, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
+    - {fileID: 1471288005, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
 --- !u!1001 &8930270827223744911
 PrefabInstance:

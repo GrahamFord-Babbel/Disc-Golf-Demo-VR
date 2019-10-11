@@ -62,7 +62,10 @@ public class OVRGrabber : MonoBehaviour
 	protected Dictionary<OVRGrabbable, int> m_grabCandidates = new Dictionary<OVRGrabbable, int>();
 	protected bool operatingWithoutOVRCameraRig = true;
 
-    public float throwMultiplier;
+    //getting DiscBehaviors parameters
+    public GameObject eventSystem;
+    public float throwMultiplier = 1.5f;
+    //public DiscBehaviors discBehaviors;
 
     /// <summary>
     /// The currently grabbed object.
@@ -104,6 +107,11 @@ public class OVRGrabber : MonoBehaviour
 
     protected virtual void Start()
     {
+
+    //to generate speed throw
+    //eventSystem = GameObject.Find("EventSystem");
+        //throwMultiplier = eventSystem.GetComponent<ScoreKe>().speed;
+
         m_lastPos = transform.position;
         m_lastRot = transform.rotation;
         if(m_parentTransform == null)

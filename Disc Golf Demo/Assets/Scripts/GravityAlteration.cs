@@ -9,6 +9,7 @@ public class GravityAlteration : MonoBehaviour
     public float gravityMod;
     public PutterActivate putterActivate;
     public float putterGravityMod;
+    public bool gravityChangeActivated;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,14 @@ public class GravityAlteration : MonoBehaviour
     {
         if (putterActivate.putterGravityActivated)
         {
+            gravityChangeActivated = true;
+        }
+
+        if (gravityChangeActivated)
+        {
             Physics.gravity = new Vector3(0, putterGravityMod, 0);
             putterActivate.putterGravityActivated = false;
+            gravityChangeActivated = false;
         }
     }
 }
