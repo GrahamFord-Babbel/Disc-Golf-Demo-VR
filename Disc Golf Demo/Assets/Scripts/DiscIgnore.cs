@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DiscIgnore : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //also a disc ignore in PlayerCollisionIgnore as there are times when the player
+    //is holding the disc that we want objects to also ignore the disc as well as the player
 
 
     //IGNORE THE PLAYER

@@ -1831,6 +1831,7 @@ GameObject:
   - component: {fileID: 412118228}
   - component: {fileID: 412118227}
   - component: {fileID: 412118230}
+  - component: {fileID: 412118231}
   m_Layer: 0
   m_Name: Barrier
   m_TagString: Untagged
@@ -1846,8 +1847,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412118225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -157.3, y: 55.875, z: -15.5625}
-  m_LocalScale: {x: 1, y: 400, z: 250}
+  m_LocalPosition: {x: -201.5, y: 55.875, z: -15.5625}
+  m_LocalScale: {x: 88.49, y: 400, z: 250}
   m_Children: []
   m_Father: {fileID: 1809470588}
   m_RootOrder: 0
@@ -1859,7 +1860,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412118225}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1926,7 +1927,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
@@ -1943,6 +1943,23 @@ MonoBehaviour:
   scene:
     m_Handle: 0
   loadCountableSceneBool: 0
+  eventManager: {fileID: 2141949630}
+--- !u!114 &412118231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412118225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b4d7aaaa687044498af9743d0ae5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1646562265}
+  disc1: {fileID: 1471287996}
+  startTimer: 0
+  discCollisionTimer: 0
   eventManager: {fileID: 2141949630}
 --- !u!1001 &469063584
 PrefabInstance:
@@ -2474,6 +2491,7 @@ GameObject:
   - component: {fileID: 589469501}
   - component: {fileID: 589469500}
   - component: {fileID: 589469503}
+  - component: {fileID: 589469504}
   m_Layer: 0
   m_Name: Barrier (3)
   m_TagString: Untagged
@@ -2489,8 +2507,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589469498}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 20.9375, y: 55.875, z: -74}
-  m_LocalScale: {x: 1, y: 400, z: 500.00024}
+  m_LocalPosition: {x: 20.9375, y: 55.875, z: -84.8}
+  m_LocalScale: {x: 19.5, y: 400, z: 500.00024}
   m_Children: []
   m_Father: {fileID: 1809470588}
   m_RootOrder: 3
@@ -2502,7 +2520,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589469498}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2569,7 +2587,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
@@ -2586,6 +2603,23 @@ MonoBehaviour:
   scene:
     m_Handle: 0
   loadCountableSceneBool: 0
+  eventManager: {fileID: 2141949630}
+--- !u!114 &589469504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589469498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b4d7aaaa687044498af9743d0ae5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1646562265}
+  disc1: {fileID: 1471287996}
+  startTimer: 0
+  discCollisionTimer: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &605291225
 GameObject:
@@ -2702,6 +2736,7 @@ GameObject:
   - component: {fileID: 650603599}
   - component: {fileID: 650603598}
   - component: {fileID: 650603601}
+  - component: {fileID: 650603602}
   m_Layer: 0
   m_Name: Barrier (1)
   m_TagString: Untagged
@@ -2717,8 +2752,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650603596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 269.8375, y: 55.875, z: -15.5625}
-  m_LocalScale: {x: 1, y: 400, z: 250}
+  m_LocalPosition: {x: 291.1, y: 55.875, z: -15.5625}
+  m_LocalScale: {x: 44.562, y: 400, z: 250}
   m_Children: []
   m_Father: {fileID: 1809470588}
   m_RootOrder: 1
@@ -2730,7 +2765,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650603596}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2797,7 +2832,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
@@ -2814,6 +2848,23 @@ MonoBehaviour:
   scene:
     m_Handle: 0
   loadCountableSceneBool: 0
+  eventManager: {fileID: 2141949630}
+--- !u!114 &650603602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650603596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b4d7aaaa687044498af9743d0ae5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1646562265}
+  disc1: {fileID: 1471287996}
+  startTimer: 0
+  discCollisionTimer: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &710729665
 GameObject:
@@ -2942,21 +2993,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64737612fd40acc40b75b9baa8f6dda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 0
-  descentThrust: 0
   sideThrust: 1.5
-  rb: {fileID: 756087644}
+  discRb: {fileID: 0}
   scoreKeeper: {fileID: 2141949629}
   discRespawn: {fileID: 0}
   addForce: 0
-  overTimeSlow: 0
+  overTimeSpeed: 0
   eventManager: {fileID: 2141949630}
---- !u!54 &756087644 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4972097388589705223, guid: ac004024bf52a7d4aad8dfe89daffc16,
-    type: 3}
-  m_PrefabInstance: {fileID: 4972097389043749725}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &756087649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,6 +3879,7 @@ MonoBehaviour:
   thisController: 0
   discRespawn: {fileID: 1235183054}
   eventManager: {fileID: 2141949630}
+  swooshSound: {fileID: 2141949633}
 --- !u!4 &966753093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 462066, guid: ce816f2e6abb0504092c23ed9b970dfd,
@@ -4245,6 +4289,7 @@ GameObject:
   - component: {fileID: 1065117417}
   - component: {fileID: 1065117416}
   - component: {fileID: 1065117419}
+  - component: {fileID: 1065117420}
   m_Layer: 0
   m_Name: Barrier (2)
   m_TagString: Untagged
@@ -4260,8 +4305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065117414}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 20.9375, y: 55.875, z: 62}
-  m_LocalScale: {x: 1, y: 400, z: 500.00024}
+  m_LocalPosition: {x: 20.9375, y: 55.875, z: 88.2}
+  m_LocalScale: {x: 55.22, y: 400, z: 500.00024}
   m_Children: []
   m_Father: {fileID: 1809470588}
   m_RootOrder: 2
@@ -4273,7 +4318,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065117414}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4340,7 +4385,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
@@ -4357,6 +4401,23 @@ MonoBehaviour:
   scene:
     m_Handle: 0
   loadCountableSceneBool: 0
+  eventManager: {fileID: 2141949630}
+--- !u!114 &1065117420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065117414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b4d7aaaa687044498af9743d0ae5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 1646562265}
+  disc1: {fileID: 1471287996}
+  startTimer: 0
+  discCollisionTimer: 0
   eventManager: {fileID: 2141949630}
 --- !u!1 &1066590038
 GameObject:
@@ -4744,6 +4805,7 @@ MonoBehaviour:
   thisController: 0
   discRespawn: {fileID: 1235183054}
   eventManager: {fileID: 2141949630}
+  swooshSound: {fileID: 2141949633}
 --- !u!1 &1222963901
 GameObject:
   m_ObjectHideFlags: 0
@@ -4963,7 +5025,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 1948435895}
   gameOverUI: {fileID: 605291225}
   replayButton: {fileID: 972475412}
@@ -5788,7 +5849,6 @@ MonoBehaviour:
   discOriginalLocation: {x: 0, y: 0, z: 0}
   discReturnLocation: {x: 0, y: 0, z: 0}
   scoreKeeper: {fileID: 2141949629}
-  discLanded: 0
   holeInOne: {fileID: 0}
   gameOverUI: {fileID: 0}
   replayButton: {fileID: 0}
@@ -6082,7 +6142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 529390af79f6908468418b98b3fc234c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityMod: -1.25
+  gravityMod: -3
   putterActivate: {fileID: 1290499584}
   putterGravityMod: -8
   gravityChangeActivated: 0
@@ -6282,7 +6342,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471287996}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 20b27a2b09cf5470e866c2708f9f9dc8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -7116,7 +7176,7 @@ MonoBehaviour:
   m_controller: 2
   m_parentTransform: {fileID: 0}
   eventSystem: {fileID: 0}
-  throwMultiplier: 1.5
+  throwMultiplier: 2.85
 --- !u!54 &1695781316
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8064,7 +8124,7 @@ MonoBehaviour:
   m_controller: 1
   m_parentTransform: {fileID: 0}
   eventSystem: {fileID: 0}
-  throwMultiplier: 1.58
+  throwMultiplier: 2.85
 --- !u!54 &1998432343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8120,21 +8180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64737612fd40acc40b75b9baa8f6dda7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 0
-  descentThrust: 0
   sideThrust: 1.5
-  rb: {fileID: 2002110147}
+  discRb: {fileID: 0}
   scoreKeeper: {fileID: 2141949629}
   discRespawn: {fileID: 0}
   addForce: 0
-  overTimeSlow: 0
+  overTimeSpeed: 0
   eventManager: {fileID: 2141949630}
---- !u!54 &2002110147 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1792170884146847622, guid: e4465c35491a2d3428c7cf3115df1339,
-    type: 3}
-  m_PrefabInstance: {fileID: 1792170882692357211}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2002110152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8545,11 +8597,11 @@ GameObject:
   - component: {fileID: 2141949627}
   - component: {fileID: 2141949626}
   - component: {fileID: 2141949625}
-  - component: {fileID: 2141949628}
   - component: {fileID: 2141949629}
   - component: {fileID: 2141949630}
   - component: {fileID: 2141949632}
   - component: {fileID: 2141949631}
+  - component: {fileID: 2141949633}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -8605,7 +8657,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2141949628
+--- !u!114 &2141949629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bccca7d65dd6e4caaa67699fbfa6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  player: {fileID: 1938913499}
+  discA: {fileID: 0}
+  distanceMultiplier: 7
+  hapticVibrationL: {fileID: 1203729427}
+  hapticVibrationR: {fileID: 964585795}
+  discGrabbedScoreKeeper: 0
+  discRespawn: {fileID: 1235183054}
+  pedestal: {fileID: 0}
+  eventManager: {fileID: 2141949630}
+--- !u!114 &2141949630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc991b88f398534b845cd3d0d06eaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  discThrown: {fileID: 1471287996}
+  discIsThrown: 0
+  discLanded: 0
+  discGrabbedManager: 0
+  rightHand: 1
+  initialDiscVelocity: 0
+  discLocationX: {fileID: 0}
+--- !u!114 &2141949631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2141949632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141949624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768f7f13fd392624987ca87498b426ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 14
+  adjustedSpeed: 0
+  glide: 0
+  adjustedGlide: 0
+  turnFade: 0
+  adjustedTurnFade: 0
+  adjustmentsEnabled: 0
+  handAnchors: []
+  ovrGrabbers: []
+  gravityAlterationObject: {fileID: 0}
+  gravityAlterationScript: {fileID: 0}
+  throwDisc: {fileID: 0}
+  throwForce: {fileID: 0}
+--- !u!82 &2141949633
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8615,9 +8745,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 767683ccce607154495c39b8a0c47eeb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 15267db85b7343f4a9a284eab2e0c9da, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -8701,79 +8831,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2141949629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141949624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bccca7d65dd6e4caaa67699fbfa6b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  player: {fileID: 1938913499}
-  discA: {fileID: 0}
-  distanceMultiplier: 7
-  hapticVibrationL: {fileID: 1203729427}
-  hapticVibrationR: {fileID: 964585795}
-  discGrabbedScoreKeeper: 0
-  discRespawn: {fileID: 1235183054}
-  pedestal: {fileID: 0}
-  eventManager: {fileID: 2141949630}
---- !u!114 &2141949630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141949624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc991b88f398534b845cd3d0d06eaed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  discThrown: {fileID: 1471287996}
-  discIsThrown: 0
-  rightHand: 1
-  initialDiscVelocity: 0
-  discLocationX: {fileID: 0}
---- !u!114 &2141949631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141949624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2141949632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141949624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768f7f13fd392624987ca87498b426ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 14
-  adjustedSpeed: 0
-  glide: 0
-  adjustedGlide: 0
-  turnFade: 0
-  adjustedTurnFade: 0
-  handAnchors: []
-  ovrGrabbers: []
-  gravityAlterationObject: {fileID: 0}
-  gravityAlterationScript: {fileID: 0}
 --- !u!1001 &1792170882692357211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8932,6 +8989,80 @@ PrefabInstance:
       objectReference: {fileID: 1646562265}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac004024bf52a7d4aad8dfe89daffc16, type: 3}
+--- !u!1001 &5034052612618883214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 723304762}
+    m_Modifications:
+    - target: {fileID: 453016706109477653, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_Name
+      value: GoalIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.023109462
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374886985085969303, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819320311493411373, guid: c9947d0dc89d07e4780cc52288c77418,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e86a4ee468fc19146b0fe01ab72743b3, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9947d0dc89d07e4780cc52288c77418, type: 3}
 --- !u!1001 &5619654342653961246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9108,6 +9239,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907480, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907480, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907480, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907480, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907483, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sign Instructions text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907481, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_Text
+      value: "Grab Disc to teleport \n   (DONT LET GO!)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907481, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767848501416907481, guid: 73f375bd5b25a054584679379549ad4e,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f375bd5b25a054584679379549ad4e, type: 3}
 --- !u!1001 &7391190343859422910
@@ -9121,6 +9292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DriverDisc:SS
+      objectReference: {fileID: 0}
+    - target: {fileID: 6002459153417127987, guid: 0e9ba759c171989408e57e14e179e3d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
@@ -9182,6 +9358,11 @@ PrefabInstance:
       propertyPath: player1
       value: 
       objectReference: {fileID: 1646562265}
+    - target: {fileID: 6230507283742090493, guid: 0e9ba759c171989408e57e14e179e3d7,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1471287997, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
       propertyPath: scoreKeeper
       value: 
@@ -9200,16 +9381,6 @@ PrefabInstance:
       propertyPath: m_grabPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1471288004}
-    - target: {fileID: 6002459153417127987, guid: 0e9ba759c171989408e57e14e179e3d7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230507283742090493, guid: 0e9ba759c171989408e57e14e179e3d7,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7391190343859422908, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
     - {fileID: 7391190344717108481, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
@@ -9356,6 +9527,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019783, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.661567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019783, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.661567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019783, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.661567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019783, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a94e5cfdd677504ca169187e84e35a4, type: 3}

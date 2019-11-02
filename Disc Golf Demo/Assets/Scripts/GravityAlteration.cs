@@ -16,11 +16,11 @@ public class GravityAlteration : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            gravityMod = -1.25f;
+            gravityMod = -3.5f;
         }
         else
         {
-            gravityMod = -1.25f;
+            gravityMod = -3.5f;
         }
 
         //set new gravity

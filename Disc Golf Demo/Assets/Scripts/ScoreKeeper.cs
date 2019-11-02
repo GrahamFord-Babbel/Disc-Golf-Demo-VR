@@ -19,6 +19,7 @@ public class ScoreKeeper : MonoBehaviour {
 
     //for disabling pedestal so users don't hit it with first throw
     public GameObject pedestal;
+    private int pedestalInt;
 
 
     public EventManager eventManager;
@@ -35,7 +36,7 @@ public class ScoreKeeper : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (discRespawn.discLanded)
+        if (eventManager.discLanded)
         {
             discGrabbedScoreKeeper = false;
         }
@@ -51,14 +52,19 @@ public class ScoreKeeper : MonoBehaviour {
 
         else if(hapticVibrationR.discGrabbed == true)
         {
+
             discGrabbedScoreKeeper = true;
             discA = eventManager.discThrown.transform;
 
-            //disable pedestal
-            pedestal.SetActive(false);
+            //only if first throw on each hole
+            if (pedestal.activeSelf == true)
+            {
+                //disable pedestal
+                pedestal.SetActive(false);
+            }
         }
 
-        if (discGrabbedScoreKeeper && discRespawn.discLanded != true)
+        if (discGrabbedScoreKeeper && eventManager.discLanded != true)
         {
             if (discRespawn.scene.buildIndex < 2)
             {

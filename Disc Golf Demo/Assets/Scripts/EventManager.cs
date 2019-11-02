@@ -7,7 +7,14 @@ public class EventManager : MonoBehaviour
 {
 
     public GameObject discThrown;
-    public bool discIsThrown = false;
+    public bool discIsThrown;
+
+    //be the Main source for scripts that rely on this bool
+    public bool discLanded;
+
+    //have main source for grabbed be here
+    public bool discGrabbedManager;
+
     public bool rightHand = true;
     public float initialDiscVelocity;
     public Transform discLocationX;
@@ -16,6 +23,9 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        discIsThrown = false; //THIS BREAKs FADE 11.1? was in above
+
         if (SceneManager.GetActiveScene().buildIndex != 3)
         {
             nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

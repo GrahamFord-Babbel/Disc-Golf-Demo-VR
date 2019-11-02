@@ -33,7 +33,7 @@ public class ThrowForceHole1: MonoBehaviour
         {
             addForce = true;
         }
-       else if (discRespawn.discLanded == true)
+       else if (eventManager.discLanded == true)
         {
             addForce = false;
         }

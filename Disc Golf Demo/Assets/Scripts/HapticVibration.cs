@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class HapticVibration : MonoBehaviour
 {
-    public bool discGrabbed;
+    public bool discGrabbed; //remove this and only have it on EventManager?
     //public GameObject theDiscGrabbed;
     public float releaseTimer;
     public OVRInput.Controller thisController;
+    private Collider thisControllerCollider;
     //public bool discThrown;
 
     //reset disc Landed
@@ -16,13 +17,33 @@ public class HapticVibration : MonoBehaviour
     public EventManager eventManager;
     //public Rigidbody rb;
 
+    //get "swoosh" sound effect
+    public AudioSource swooshSound;
+
+    //get disc to make sure its in han
+    public Rigidbody discRbHaptic;
+    public TrailRenderer discTrail;
+
 
     // Start is called before the first frame update
 
     void Start()
     {
         discGrabbed = false;
-        
+        discRbHaptic = eventManager.discThrown.GetComponent<Rigidbody>();
+        thisControllerCollider = this.GetComponent<Collider>();
+        Debug.Log("controller collider is:" + thisControllerCollider);
+        discTrail = eventManager.discThrown.GetComponent<TrailRenderer>();
+
+    }
+
+    //delete this is slow down (only weird change lately)
+    private void FixedUpdate()
+    {
+        if (this.GetComponent<Collider>().enabled == false)
+        {
+            swooshSound.Play();
+        }
     }
 
     // Update is called once per frame
@@ -34,24 +55,27 @@ public class HapticVibration : MonoBehaviour
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
             releaseTimer = 0;
             discGrabbed = false;
+            eventManager.discGrabbedManager = false; //remove 1
             eventManager.discIsThrown = false;
         }
        
 
-        if (this.GetComponent<Collider>().enabled == false)
+        if (thisControllerCollider.enabled == false && discRbHaptic.isKinematic == true)
         {
             //prime disc for release vibration
             discGrabbed = true;
-            discRespawn.discLanded = false;
-            eventManager.discThrown.GetComponent<TrailRenderer>().enabled = false;
+            eventManager.discGrabbedManager = true; //remove 1
+            eventManager.discLanded = false;
+            discTrail.enabled = false; //eliminate this to speed up game?
 
         }
 
         //activate vibration on release
-        if(discGrabbed == true && this.GetComponent<Collider>().enabled == true) 
+        if(discGrabbed == true && discRbHaptic.isKinematic == false) 
         {
+            //swooshSound.Play();
             eventManager.discIsThrown = true;
-            eventManager.discThrown.GetComponent<TrailRenderer>().enabled = true;
+            discTrail.enabled = true;
             //if this game objects parent is R, string is Rtouch, else
             if (this.gameObject.transform.parent.name == "LeftControllerAnchor")
             {
@@ -67,7 +91,10 @@ public class HapticVibration : MonoBehaviour
 
             //set disc velocity immediately after thrown
             OVRInput.SetControllerVibration(0.35f, 0.35f, thisController);
+
+            //necessary anymore?
             eventManager.initialDiscVelocity = ((eventManager.discThrown.GetComponent<Rigidbody>().velocity.x)/50);
+
             //Debug.Log("intial velocity is: " + eventManager.initialDiscVelocity);
            
             //set disc location upon throw
@@ -78,6 +105,7 @@ public class HapticVibration : MonoBehaviour
                 releaseTimer++;
                 
             }
+
         }
     }
 

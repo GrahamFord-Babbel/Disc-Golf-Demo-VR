@@ -13,6 +13,7 @@ public class DiscBehaviors : MonoBehaviour
     //for the UI turn and fade will actually manipulate the same value: turnFade (but they will seem different to the user visually)
     public float turnFade;
     public float adjustedTurnFade;
+    public bool adjustmentsEnabled;
 
     //array and list for Speed modification
     public GameObject[] handAnchors;
@@ -25,9 +26,6 @@ public class DiscBehaviors : MonoBehaviour
     //get ThrowForce script for Turn & Fade
     public GameObject throwDisc;
     public ThrowForce throwForce;
-
-    //get the slider for behavior mods via UI - IF nothing else works
-    public GameObject slider;
 
     // Start is called before the first frame update
     void Start()
@@ -54,48 +52,70 @@ public class DiscBehaviors : MonoBehaviour
             else Debug.LogError("GameObject with tag handAnchor does not contain component OVRGrabber");
         }
 
+        //set disc at NORMAL
+        //reset speed
+        for (int i = 0; i < handAnchors.Length; i++)
+        {
+
+            ovrGrabbers[i].throwMultiplier = 12 / 4;
+        }
+        //reset glide
+        gravityAlterationScript.putterGravityMod = -2.5f;
+        gravityAlterationScript.gravityChangeActivated = true;
+
+        //reset turnFade
+        throwForce.sideThrust = 0; //THIS BREAKs FADE 11.1?
+
+        adjustmentsEnabled = false; //THIS BREAKs FADE 11.1?
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //update Speed if changed
-        if (speed != adjustedSpeed)
+        //return to ideal throw Flight Numbers
+        if (adjustmentsEnabled)
         {
+
+            //update Speed if changed
+            if (speed != adjustedSpeed)
+            {
                 for (int i = 0; i < handAnchors.Length; i++)
                 {
-                    
+
                     ovrGrabbers[i].throwMultiplier = adjustedSpeed / 4;
                 }
                 speed = adjustedSpeed;
+            }
+
+            //update Glide if changed
+            if (glide != adjustedGlide)
+            {
+                //readjust glide so it starts at 8 (1 above highest, preventing 0 gravity), so that each change causes an inverse to actual gravityMod
+                glide = 8;
+
+                //gravity changes inverse to the actual glide amount
+                gravityAlterationScript.putterGravityMod = -(glide - adjustedGlide);
+                gravityAlterationScript.gravityChangeActivated = true;
+
+                //reset glide
+                glide = adjustedGlide;
+            }
+
+            //Update Fade/Turn if changed
+            if (turnFade != adjustedTurnFade)
+            {
+                throwForce.sideThrust = adjustedTurnFade;
+
+                turnFade = adjustedTurnFade;
+            }
+
         }
-
-        //update Glide if changed
-        if (glide != adjustedGlide)
-        {
-            //readjust glide so it starts at 7 (highest), so that each change causes an inverse to actual gravityMod
-            glide = 7;    
-
-            //gravity changes inverse to the actual glide amount
-            gravityAlterationScript.putterGravityMod = -(glide - adjustedGlide);
-            gravityAlterationScript.gravityChangeActivated = true;
-
-            //reset glide
-            glide = adjustedGlide;
-        }
-
-        //Update Fade/Turn if changed
-        if (turnFade != adjustedTurnFade)
-        {
-            throwForce.sideThrust = adjustedTurnFade;
-
-            turnFade = adjustedTurnFade;
-        }
+        
 
     }
 
-    //HOW TO ELIMIATE BELOW REPETITION - C# Delegate?
+    //HOW TO ELIMIATE BELOW & ABOVE REPETITION - C# Delegate?
 
     //so that the Slider can find this script and adjust the value
     public void OnSliderValueChangedSpeed(float value)
@@ -112,5 +132,30 @@ public class DiscBehaviors : MonoBehaviour
     public void OnSliderValueChangedTurnFade(float value)
     {
         adjustedTurnFade = value;
+    }
+
+    public void OnSliderValueChangedEnabled(bool value)
+    {
+        adjustmentsEnabled = value;
+
+        if (!adjustmentsEnabled)
+        {
+            //reset speed
+            for (int i = 0; i < handAnchors.Length; i++)
+            {
+
+                ovrGrabbers[i].throwMultiplier = 11 / 4;
+            }
+
+            //reset glide
+            gravityAlterationScript.putterGravityMod = -2.5f;
+            gravityAlterationScript.gravityChangeActivated = true;
+
+            //reset turnFade
+            throwForce.sideThrust = 0;
+
+
+        }
+
     }
 }

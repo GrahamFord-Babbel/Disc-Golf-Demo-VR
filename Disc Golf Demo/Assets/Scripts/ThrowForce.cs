@@ -10,19 +10,18 @@ public class ThrowForce : MonoBehaviour
     public float sideThrust;
     public Rigidbody discRb;
     public ScoreKeeper scoreKeeper;
-    //public HapticVibration hapticVibration;
+    public HapticVibration hapticVibration;
     public DiscRespawn discRespawn;
     public bool addForce;
     public float overTimeSpeed;
-
-    //get factor of turn or fade
-    public int turnOrFade;
 
     public EventManager eventManager;
 
     void Start()
     {
-        discRb = GetComponent<Rigidbody>();
+        //discRb = hapticVibration.discRb.GetComponent<Rigidbody>(); //disabling because cant find it, look later
+        addForce = false; //THIS BREAKs FADE 11.1?
+        //sideThrust = 0;//THIS BREAKs FADE 11.1? - this deffinitely breaks it because sideThrust is a multiplier, so if it was ever 0, it could never get more than 0
     }
 
     private void Update()
@@ -31,7 +30,7 @@ public class ThrowForce : MonoBehaviour
         {
             addForce = true;
         }
-       else if (discRespawn.discLanded == true)
+       else if (eventManager.discLanded == true)
         {
             addForce = false;
             overTimeSpeed = 0;
@@ -48,18 +47,33 @@ public class ThrowForce : MonoBehaviour
                 overTimeSpeed = overTimeSpeed + Time.deltaTime;
             }
 
-            //right hand throw
-            if (eventManager.rightHand == true)
-            {
-                turnOrFade = 1;
+            //IF ADJUSTMENT WORKS - DELETE
+            ////right hand throw
+            //if (eventManager.rightHand == true)
+            //{
+            //    turnOrFade = 1;
+            //}
+            //else
+            //{
+            //    turnOrFade = -1;
+            //}
+
+            //turn or fade - Way to eliminate REPEAT repetition below?
+            //FADE increases the curve right overtime
+            if (sideThrust > 0){
+                discRb.AddRelativeForce(0, 0, (sideThrust + (overTimeSpeed / 2)));
             }
+            //TURN increases the curve left overtime
+            else if (sideThrust < 0)
+            {
+                    discRb.AddRelativeForce(0, 0, (sideThrust - (overTimeSpeed / 2)));
+            }
+            //NEITHER
             else
             {
-                turnOrFade = -1;
+                discRb.AddRelativeForce(0, 0, 0);
             }
-       
-            //turn or fade
-            discRb.AddRelativeForce(0, 0, (sideThrust + (overTimeSpeed/2)) * turnOrFade);
+
 
         }
         

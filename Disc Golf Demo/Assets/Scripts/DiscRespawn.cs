@@ -10,7 +10,7 @@ public class DiscRespawn : MonoBehaviour
     public Vector3 discOriginalLocation;
     public Vector3 discReturnLocation;
     public ScoreKeeper scoreKeeper;
-    public bool discLanded;
+    //public bool discLanded; //moved to Main location on EventManager
 
     //UI Components
     public Text holeInOne;
@@ -72,10 +72,13 @@ public class DiscRespawn : MonoBehaviour
         //    LoadCountableScene();
         //}
 
-        //deletes the savedSalesCodes so that no Code is collected twice for that 1 user (probably a bit drastic)
-        if (replayButton.replayGame)
+        if (scene.buildIndex == 0) //NEED to figure out how not to have script variables that effect unique scenes but are applied in all scenes
         {
-            Destroy(savedSaleCodes.gameObject); //maybe shouldn't destroy? maybe do the same thing as when autoreloads? 
+            //deletes the savedSalesCodes so that no Code is collected twice for that 1 user (probably a bit drastic)
+            if (replayButton.replayGame)
+            {
+                Destroy(savedSaleCodes.gameObject); //maybe shouldn't destroy? maybe do the same thing as when autoreloads? 
+            }
         }
 
     }
@@ -90,8 +93,20 @@ public class DiscRespawn : MonoBehaviour
             disolveAnim.transform.position = collision.gameObject.transform.position;
 
             //if its the driving range, then the below wont happen so that the player can continue to throw from start position
-            if (scene.buildIndex > 1)
+            if (scene.buildIndex == 1)
             {
+                if(this.name == "QuickPlayGoalTrigger")
+                {
+                    //load next scene
+                    SceneManager.LoadScene(3);
+                }
+                else if (this.name == "FullPlayGoalTrigger")
+                {
+                    //load next scene
+                    SceneManager.LoadScene(2);
+                }
+
+            }
                 if (scene.buildIndex == 2)
                 {
                     //increase throw count
@@ -140,7 +155,7 @@ public class DiscRespawn : MonoBehaviour
                     //to destroy the the SavedSalesCodes once full game run through
                     savedSaleCodes.nowDestroy = true;
                 }
-            }
+            
             disolveAnim.SetActive(true);
 
         }
@@ -148,9 +163,11 @@ public class DiscRespawn : MonoBehaviour
         //return the disc to original position on contact with field
         if (scene.buildIndex < 2)
         {
+            //add a section here that has discLanded = true, then carries out below. have another code applied to the barriers that changes this boolean, remove collision tag here
+
             if (collision.gameObject.tag == "Disc")
             {
-            discLanded = true;
+            eventManager.discLanded = true;
             scoreKeeper.score = 0;
             //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
             discReturnLocation = discOriginalLocation; //+ new Vector3(Random.Range(0, 2), 0, 0);
@@ -172,11 +189,13 @@ public class DiscRespawn : MonoBehaviour
         {
             if (collision.gameObject.tag == "Disc")
             {
-                if (discLanded == false)
+                if (eventManager.discLanded == false)
                 {
-
-                    //remove velocity
-                    collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    if (this.name == "Field")
+                    {
+                        //remove velocity - does not apply to barriers 11.1
+                        collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    }
 
                     //increase throw count
                     scoreKeeper.score += 1;
@@ -196,7 +215,7 @@ public class DiscRespawn : MonoBehaviour
                     teleportationUIDisc.SetActive(true); ////DEACTIVATE THIS IF WANT TO GO BACK TO NORMAL TELEPORT (PERHAPS A/B Test) 10.2
 
                     //closes the loop, so function doesnt run again
-                    discLanded = true;
+                    eventManager.discLanded = true;
 
 
                 }
