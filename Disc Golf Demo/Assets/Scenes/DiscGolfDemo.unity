@@ -625,11 +625,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.936665
       objectReference: {fileID: 0}
-    - target: {fileID: 8930270826893019781, guid: 9a94e5cfdd677504ca169187e84e35a4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8930270826893019784, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_Name
@@ -638,6 +633,11 @@ PrefabInstance:
     - target: {fileID: 8930270826871020108, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019781, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8930270827543900789, guid: 9a94e5cfdd677504ca169187e84e35a4,
@@ -2977,8 +2977,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "Instructions:\n1. Use TRIGGER to pick up disc\n2. Release to THROW\n2.
-    Throw disc into a basket \n    to START game"
+  m_Text: "Instructions:\n1. Use GRIP to pick up disc\n2. Release to THROW\n2. Throw
+    disc into a basket \n    to START game"
 --- !u!222 &932580723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3458,11 +3458,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.6103268
       objectReference: {fileID: 0}
-    - target: {fileID: 8930270826893019781, guid: 9a94e5cfdd677504ca169187e84e35a4,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8930270826893019784, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_Name
@@ -3471,6 +3466,11 @@ PrefabInstance:
     - target: {fileID: 8930270826871020108, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270826893019781, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8930270827543900789, guid: 9a94e5cfdd677504ca169187e84e35a4,
