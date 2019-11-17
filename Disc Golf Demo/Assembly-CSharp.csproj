@@ -1272,7 +1272,6 @@
     <Compile Include="Assets\PlayMaker\Actions\Web\WWWObject.cs" />
     <Compile Include="Assets\PlayMaker\FsmProcessor.cs" />
     <Compile Include="Assets\PlayMaker\UpdateHelper.cs" />
-    <Compile Include="Assets\replayfakeDelete.cs" />
     <Compile Include="Assets\RockVR\Common\Scripts\EventDelegate.cs" />
     <Compile Include="Assets\RockVR\Common\Scripts\FPSDisplay.cs" />
     <Compile Include="Assets\RockVR\Common\Scripts\Platform.cs" />
@@ -1319,6 +1318,7 @@
     <Compile Include="Assets\Scripts\PUN Code\PhotonNetworkManager.cs" />
     <Compile Include="Assets\Scripts\PutterActivate.cs" />
     <Compile Include="Assets\Scripts\ReplayButton.cs" />
+    <Compile Include="Assets\Scripts\replayfakeDelete.cs" />
     <Compile Include="Assets\Scripts\SavedSaleCodes.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
