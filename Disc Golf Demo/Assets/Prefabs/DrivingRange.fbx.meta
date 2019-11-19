@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: e949a992f2af1e54bbc1dc4067edc6db
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cone
+    100002: Cone.001
+    100004: Cone.002
+    100006: Cylinder
+    100008: Cylinder.001
+    100010: Cylinder.002
+    100012: Cylinder.003
+    100014: //RootNode
+    100016: FairWay
+    100018: Goal
+    100020: Goal.001
+    100022: Goal.002
+    100024: GoalMound
+    100026: GoalMound.001
+    100028: GoalMound.002
+    100030: Sphere
+    100032: Sphere.001
+    100034: Sphere.002
+    400000: Cone
+    400002: Cone.001
+    400004: Cone.002
+    400006: Cylinder
+    400008: Cylinder.001
+    400010: Cylinder.002
+    400012: Cylinder.003
+    400014: //RootNode
+    400016: FairWay
+    400018: Goal
+    400020: Goal.001
+    400022: Goal.002
+    400024: GoalMound
+    400026: GoalMound.001
+    400028: GoalMound.002
+    400030: Sphere
+    400032: Sphere.001
+    400034: Sphere.002
+    2100000: FairWayGreen
+    2100002: PuttRangeLightGreen
+    2100004: ThrowBaseGrey
+    2100006: PoleBlack
+    2100008: GoalOrange
+    2100010: GoalShade
+    2100012: Material
+    2300000: Cone
+    2300002: Cone.001
+    2300004: Cone.002
+    2300006: Cylinder
+    2300008: Cylinder.001
+    2300010: Cylinder.002
+    2300012: Cylinder.003
+    2300014: FairWay
+    2300016: Goal
+    2300018: Goal.001
+    2300020: Goal.002
+    2300022: GoalMound
+    2300024: GoalMound.001
+    2300026: GoalMound.002
+    2300028: Sphere
+    2300030: Sphere.001
+    2300032: Sphere.002
+    3300000: Cone
+    3300002: Cone.001
+    3300004: Cone.002
+    3300006: Cylinder
+    3300008: Cylinder.001
+    3300010: Cylinder.002
+    3300012: Cylinder.003
+    3300014: FairWay
+    3300016: Goal
+    3300018: Goal.001
+    3300020: Goal.002
+    3300022: GoalMound
+    3300024: GoalMound.001
+    3300026: GoalMound.002
+    3300028: Sphere
+    3300030: Sphere.001
+    3300032: Sphere.002
+    4300000: FairWay
+    4300002: GoalMound
+    4300004: Goal
+    4300006: Cone
+    4300008: Cylinder
+    4300010: Sphere
+    4300012: GoalMound.001
+    4300014: Cone.001
+    4300016: Cylinder.001
+    4300018: Goal.001
+    4300020: Sphere.001
+    4300022: GoalMound.002
+    4300024: Cone.002
+    4300026: Cylinder.002
+    4300028: Goal.002
+    4300030: Sphere.002
+    4300032: Cylinder.003
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

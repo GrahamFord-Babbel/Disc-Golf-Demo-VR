@@ -111,10 +111,15 @@ public class ScoreDisplay : MonoBehaviour {
 
         }
 
+        //only for driving range
         if (thisText == scoreText)
         {
-            scoreText.text = "Throw: " + scoreKeeper.score;
+            //change the score value to display as int
+            string displayedScore = scoreKeeper.score.ToString("F0");
+
+            scoreText.text = "Throw: " + displayedScore;
         }
+        //only for practice hole
         else if (thisText == highScoreText)
         {
             highScoreText.text = "Today's High Score: " + highScore;
