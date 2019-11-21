@@ -7536,6 +7536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vrHeadsetTransform: {fileID: 0}
   grabBegin: 0.55
   grabEnd: 0.35
   m_parentHeldObject: 0
@@ -8484,6 +8485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vrHeadsetTransform: {fileID: 0}
   grabBegin: 0.55
   grabEnd: 0.35
   m_parentHeldObject: 0
@@ -9101,10 +9103,13 @@ MonoBehaviour:
   adjustmentsEnabled: 0
   handAnchors: []
   ovrGrabbers: []
-  gravityAlterationObject: {fileID: 0}
-  gravityAlterationScript: {fileID: 0}
+  gravityAlterationObject: {fileID: 1458377341}
+  gravityAlterationScript: {fileID: 1458377342}
   throwDisc: {fileID: 0}
   throwForce: {fileID: 0}
+  putterActivate: {fileID: 1290499584}
+  putterGravityMod: 0
+  gravityChangeActivated: 0
 --- !u!82 &2141949633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9663,11 +9668,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DriverDisc:SS
       objectReference: {fileID: 0}
-    - target: {fileID: 6002459153417127987, guid: 0e9ba759c171989408e57e14e179e3d7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7391190344717108604, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9751,6 +9751,11 @@ PrefabInstance:
       propertyPath: m_grabPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1471288004}
+    - target: {fileID: 6002459153417127987, guid: 0e9ba759c171989408e57e14e179e3d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7391190343859422908, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
     - {fileID: 7391190344717108481, guid: 0e9ba759c171989408e57e14e179e3d7, type: 3}
@@ -9893,11 +9898,6 @@ PrefabInstance:
       propertyPath: replayButton
       value: 
       objectReference: {fileID: 972475412}
-    - target: {fileID: 8930270828470296785, guid: 9a94e5cfdd677504ca169187e84e35a4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.009
-      objectReference: {fileID: 0}
     - target: {fileID: 8930270826893019783, guid: 9a94e5cfdd677504ca169187e84e35a4,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9917,6 +9917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930270828470296785, guid: 9a94e5cfdd677504ca169187e84e35a4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a94e5cfdd677504ca169187e84e35a4, type: 3}

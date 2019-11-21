@@ -19,11 +19,17 @@ public class ReplayButton : MonoBehaviour
         {
                 button.Select();
 
-                //not sure what this would be for, but forums use it
-                //button.OnSelect(null);
+            //not sure what this would be for, but forums use it
+            //button.OnSelect(null);
 
-                //mark as a "replayable" version
-                replayGame = true;
+            PlayerPrefs.SetFloat("driverSpeed", 0);
+            PlayerPrefs.SetFloat("driverGlide", 0);
+            PlayerPrefs.SetFloat("driverTurnFade", 0);
+
+            //mark as a "replayable" version
+            replayGame = true;
+
+
 
                 yield return new WaitForSeconds(1);
                 eventManager.LoadNextScene();

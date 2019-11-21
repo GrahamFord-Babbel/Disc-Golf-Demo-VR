@@ -85,12 +85,16 @@ public class DiscRespawn : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //rigidbody of most likely the disc
+        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+
         //create goal effects when disc hits goal
         if (this.tag == "Goal")
         {
-            //remove velocity
-            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            disolveAnim.transform.position = collision.gameObject.transform.position;
+            //remove velocity 
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            disolveAnim.transform.position = rb.position;
 
             //if its the driving range, then the below wont happen so that the player can continue to throw from start position
             if (scene.buildIndex == 1)
@@ -171,8 +175,9 @@ public class DiscRespawn : MonoBehaviour
             scoreKeeper.score = 0;
             //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
             discReturnLocation = discOriginalLocation; //+ new Vector3(Random.Range(0, 2), 0, 0);
-            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            collision.gameObject.transform.position = discReturnLocation;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.position = discReturnLocation;
             //eventManager.initialDiscVelocity = 0;
 
             if (this.gameObject.name == "GoalScoreTrigger-300ft")
@@ -194,14 +199,14 @@ public class DiscRespawn : MonoBehaviour
                     if (this.name == "Field")
                     {
                         //remove velocity - does not apply to barriers 11.1
-                        collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        rb.velocity = Vector3.zero;
                     }
 
                     //increase throw count
                     scoreKeeper.score += 1;
 
                     //mark location of disc landed
-                    discLandedLocation = collision.gameObject.GetComponent<Transform>().position;
+                    discLandedLocation = rb.position;
 
                     if (!holeInOne.enabled)
                     {
@@ -254,6 +259,10 @@ public class DiscRespawn : MonoBehaviour
         //Debug.Log("EndGameLoad, only happened once");
         yield return new WaitForSeconds(15);
         //Debug.Log("not waiting for 10 seconds");
+
+        PlayerPrefs.SetFloat("driverSpeed", 0);
+        PlayerPrefs.SetFloat("driverGlide", 0);
+        PlayerPrefs.SetFloat("driverTurnFade", 0);
 
         replayButton.replayGame = false;
         loadCountableSceneBool = false;

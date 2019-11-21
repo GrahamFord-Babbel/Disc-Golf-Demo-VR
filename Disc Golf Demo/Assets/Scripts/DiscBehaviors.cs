@@ -27,10 +27,18 @@ public class DiscBehaviors : MonoBehaviour
     public GameObject throwDisc;
     public ThrowForce throwForce;
 
+    //putter specifications
+    public PutterActivate putterActivate;
+    public float putterGravityMod;
+    public bool gravityChangeActivated;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //get saved values from when player made disc (and customized its flight numbers)
+        speed = PlayerPrefs.GetFloat("driverSpeed");
+        glide = PlayerPrefs.GetFloat("driverGlide");
+        turnFade = PlayerPrefs.GetFloat("driverTurnFade");
 
         //get resources-
         //find all objects that have the OVRGrabber script
@@ -52,17 +60,38 @@ public class DiscBehaviors : MonoBehaviour
             else Debug.LogError("GameObject with tag handAnchor does not contain component OVRGrabber");
         }
 
-        //set disc at NORMAL
+        //set disc at NORMAL (or if player customized, set to customized values)
         //reset speed
         for (int i = 0; i < handAnchors.Length; i++)
         {
-
-            ovrGrabbers[i].throwMultiplier = 12 / 4;
+            //for normalizing the disc if no customization
+            if(speed == 0)
+            {
+                ovrGrabbers[i].throwMultiplier = 12 / 3;
+            }
+            //if customized
+            else
+            {
+                ovrGrabbers[i].throwMultiplier = speed / 4;
+            }
         }
         //reset glide
-        gravityAlterationScript.putterGravityMod = -2.5f;
-        gravityAlterationScript.gravityChangeActivated = true;
+        if(glide == 0)
+        {
+            gravityAlterationScript.putterGravityMod = -2.5f;
+            gravityAlterationScript.gravityChangeActivated = true;
+            
+        }
+        else if (glide != 0)
+        {
+            gravityAlterationScript.putterGravityMod = -glide;
+        }
+        print("GRAVITY MOD:" + -glide);
 
+        if (turnFade != 0)
+        {
+            throwForce.sideThrust = turnFade;
+        }
         //reset turnFade
         throwForce.sideThrust = 0; //THIS BREAKs FADE 11.1?
 
@@ -73,7 +102,32 @@ public class DiscBehaviors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //return to ideal throw Flight Numbers
+        //change disc behaviors to putter
+        if (putterActivate.putterGravityActivated)
+        {
+            gravityChangeActivated = true;
+            adjustmentsEnabled = false;
+        }
+
+        if (gravityChangeActivated)
+        {
+            //reduce speed on all controllers
+            for (int i = 0; i < handAnchors.Length; i++)
+            {
+
+                ovrGrabbers[i].throwMultiplier = 1.5f;
+            }
+            speed = adjustedSpeed;
+
+            //increase gravity
+            Physics.gravity = new Vector3(0, putterGravityMod, 0);
+
+            //necessary bools
+            putterActivate.putterGravityActivated = false;
+            gravityChangeActivated = false;
+        }
+
+        //allow disc behaviors to be modified
         if (adjustmentsEnabled)
         {
 

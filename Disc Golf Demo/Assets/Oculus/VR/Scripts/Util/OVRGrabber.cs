@@ -23,6 +23,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class OVRGrabber : MonoBehaviour
 {
+    //get transform of headset (for throw) - NOT PART OF ORIGINAL OVRGrabber
+    public Transform vrHeadsetTransform;
+
     // Grip trigger thresholds for picking up objects, with some hysteresis.
     public float grabBegin = 0.55f;
     public float grabEnd = 0.35f;
@@ -156,7 +159,7 @@ public class OVRGrabber : MonoBehaviour
 
 		float prevFlex = m_prevFlex;
         // Update values from inputs
-        m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller); //changed from "Hand" to "Index" - 8.15
+        m_prevFlex = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, m_controller); //changed from "Hand" to "Index" - 8.15 (NOT PART OF ORIGINAL OVRGRABBER)
 
         CheckForGrabOrRelease(prevFlex);
     }
@@ -336,11 +339,13 @@ public class OVRGrabber : MonoBehaviour
             OVRPose offsetPose = new OVRPose { position = m_anchorOffsetPosition, orientation = m_anchorOffsetRotation };
             localPose = localPose * offsetPose;
 
-			OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
+            OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
+
 			Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller) * throwMultiplier; //added throwMultiplier - 9.29
-			Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller);
+            Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller); //trackingSpace.orientation
 
             GrabbableRelease(linearVelocity, angularVelocity);
+
         }
 
         // Re-enable grab volumes to allow overlap events
@@ -350,7 +355,8 @@ public class OVRGrabber : MonoBehaviour
     protected void GrabbableRelease(Vector3 linearVelocity, Vector3 angularVelocity)
     {
         m_grabbedObj.GrabEnd(linearVelocity, angularVelocity);
-        if(m_parentHeldObject) m_grabbedObj.transform.parent = null;
+
+        if (m_parentHeldObject) m_grabbedObj.transform.parent = null;
         m_grabbedObj = null;
     }
 

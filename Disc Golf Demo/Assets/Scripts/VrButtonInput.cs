@@ -44,11 +44,17 @@ public class VrButtonInput : MonoBehaviour
             {
                 leftPointer.SetActive(true);
                 rightPointer.SetActive(false);
+                PlayerPrefs.SetFloat("driverSpeed", 0);
+                PlayerPrefs.SetFloat("driverGlide", 0);
+                PlayerPrefs.SetFloat("driverTurnFade", 0);
             }
             else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
                 leftPointer.SetActive(false);
                 rightPointer.SetActive(true);
+                PlayerPrefs.SetFloat("driverSpeed", 0);
+                PlayerPrefs.SetFloat("driverGlide", 0);
+                PlayerPrefs.SetFloat("driverTurnFade", 0);
             }
         }
 

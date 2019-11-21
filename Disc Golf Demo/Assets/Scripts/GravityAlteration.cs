@@ -31,16 +31,17 @@ public class GravityAlteration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (putterActivate.putterGravityActivated)
-        {
-            gravityChangeActivated = true;
-        }
+        //MOVED TO DISCBEHAVIORS
+        //if (putterActivate.putterGravityActivated)
+        //{
+        //    gravityChangeActivated = true;
+        //}
 
-        if (gravityChangeActivated)
-        {
-            Physics.gravity = new Vector3(0, putterGravityMod, 0);
-            putterActivate.putterGravityActivated = false;
-            gravityChangeActivated = false;
-        }
+        //if (gravityChangeActivated)
+        //{
+        //    Physics.gravity = new Vector3(0, putterGravityMod, 0);
+        //    putterActivate.putterGravityActivated = false;
+        //    gravityChangeActivated = false;
+        //}
     }
 }

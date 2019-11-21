@@ -6613,8 +6613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vrHeadsetTransform: {fileID: 966753093}
   grabBegin: 0.55
-  grabEnd: 0.35
+  grabEnd: 0.75
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 964585791}
   m_grabVolumes:
@@ -7151,8 +7152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd425c2d06f39bf4899d07c05d0f10eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vrHeadsetTransform: {fileID: 324264390}
   grabBegin: 0.55
-  grabEnd: 0.35
+  grabEnd: 0.75
   m_parentHeldObject: 0
   m_gripTransform: {fileID: 1203729423}
   m_grabVolumes:
@@ -8067,9 +8069,12 @@ MonoBehaviour:
   handAnchors: []
   ovrGrabbers: []
   gravityAlterationObject: {fileID: 1458377341}
-  gravityAlterationScript: {fileID: 0}
+  gravityAlterationScript: {fileID: 1458377342}
   throwDisc: {fileID: 0}
   throwForce: {fileID: 0}
+  putterActivate: {fileID: 2002110153}
+  putterGravityMod: 0
+  gravityChangeActivated: 0
 --- !u!82 &2141949633
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8462,6 +8467,11 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2141949632}
+    - target: {fileID: 6920585670900998766, guid: 8c54bf0e126dd5347aac428486c38034,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3473328835279661191, guid: 8c54bf0e126dd5347aac428486c38034,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8799,6 +8809,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c54bf0e126dd5347aac428486c38034, type: 3}
+--- !u!1001 &4467073394526880397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467073394196989251, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_Name
+      value: Sticker
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989273, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467073394196989277, guid: 52288815316218c41954b4d7393b9d43,
+        type: 3}
+      propertyPath: discBehaviors
+      value: 
+      objectReference: {fileID: 2141949632}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52288815316218c41954b4d7393b9d43, type: 3}
 --- !u!1001 &4972097389043749725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8988,6 +9072,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DriverDisc:SS
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391190344717108602, guid: 0e9ba759c171989408e57e14e179e3d7,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 7391190344861983016, guid: 0e9ba759c171989408e57e14e179e3d7,
         type: 3}

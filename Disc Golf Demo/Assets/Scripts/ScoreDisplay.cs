@@ -123,7 +123,6 @@ public class ScoreDisplay : MonoBehaviour {
         else if (thisText == highScoreText)
         {
             highScoreText.text = "Today's High Score: " + highScore;
-            Debug.Log("high score true");
         }
 
         PlayerPrefs.SetFloat("highScore", highScore);

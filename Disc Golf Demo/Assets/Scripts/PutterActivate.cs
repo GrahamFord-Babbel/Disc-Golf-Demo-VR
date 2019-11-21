@@ -15,6 +15,7 @@ public class PutterActivate : MonoBehaviour
     public Material putterMat;
 
     public bool putterGravityActivated;
+    private int activatedCount;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +32,19 @@ public class PutterActivate : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        //activates the smaller blue disc, with different physics so that its easier to shoot into the goal when close
-        if (other.name == "DriverDisc:SS")
+        if (activatedCount < 1)
         {
-            Debug.Log("disc collided");
-            print(other.name);
-            discMeshTransform.localScale = new Vector3(discMeshTransform.localScale.x * shrinkSize, discMeshTransform.localScale.y * shrinkSize, discMeshTransform.localScale.z);
-            discRenderer.material = putterMat;
-            putterGravityActivated = true;
+            //activates the smaller blue disc, with different physics so that its easier to shoot into the goal when close
+            if (other.name == "DriverDisc:SS")
+            {
+                Debug.Log("putter activated");
+                print(other.name);
+                discMeshTransform.localScale = new Vector3(discMeshTransform.localScale.x * shrinkSize, discMeshTransform.localScale.y * shrinkSize, discMeshTransform.localScale.z);
+                discRenderer.material = putterMat;
+                putterGravityActivated = true;
+                activatedCount++;
+
+            }
         }
     }
 }

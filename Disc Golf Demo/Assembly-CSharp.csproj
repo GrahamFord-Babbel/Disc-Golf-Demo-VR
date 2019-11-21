@@ -1322,6 +1322,7 @@
     <Compile Include="Assets\Scripts\SavedSaleCodes.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\stickerDiscSave.cs" />
     <Compile Include="Assets\Scripts\TeleportUI.cs" />
     <Compile Include="Assets\Scripts\ThrowForce.cs" />
     <Compile Include="Assets\Scripts\ThrowForceHole1.cs" />
