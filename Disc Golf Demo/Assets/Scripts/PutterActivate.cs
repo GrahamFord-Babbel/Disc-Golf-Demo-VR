@@ -37,8 +37,6 @@ public class PutterActivate : MonoBehaviour
             //activates the smaller blue disc, with different physics so that its easier to shoot into the goal when close
             if (other.name == "DriverDisc:SS")
             {
-                Debug.Log("putter activated");
-                print(other.name);
                 discMeshTransform.localScale = new Vector3(discMeshTransform.localScale.x * shrinkSize, discMeshTransform.localScale.y * shrinkSize, discMeshTransform.localScale.z);
                 discRenderer.material = putterMat;
                 putterGravityActivated = true;

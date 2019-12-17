@@ -24,6 +24,8 @@ public class HapticVibration : MonoBehaviour
     public Rigidbody discRbHaptic;
     public TrailRenderer discTrail;
 
+    public Transform vrHeadSetTransform;
+
 
     // Start is called before the first frame update
 
@@ -49,6 +51,9 @@ public class HapticVibration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
         if (releaseTimer > 25)
         {
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
@@ -73,7 +78,6 @@ public class HapticVibration : MonoBehaviour
         //activate vibration on release
         if(discGrabbed == true && discRbHaptic.isKinematic == false) 
         {
-            //swooshSound.Play();
             eventManager.discIsThrown = true;
             discTrail.enabled = true;
             //if this game objects parent is R, string is Rtouch, else

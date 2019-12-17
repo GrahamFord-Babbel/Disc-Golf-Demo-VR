@@ -330,22 +330,22 @@ public class OVRGrabber : MonoBehaviour
             grabbedRigidbody.MoveRotation(grabbableRotation);
         }
     }
-
+    //NEED TO CLEAN UP YOUR ATTEMPT WORK 11.22
     protected void GrabEnd()
     {
         if (m_grabbedObj != null)
         {
-			OVRPose localPose = new OVRPose { position = OVRInput.GetLocalControllerPosition(m_controller), orientation = OVRInput.GetLocalControllerRotation(m_controller) };
-            OVRPose offsetPose = new OVRPose { position = m_anchorOffsetPosition, orientation = m_anchorOffsetRotation };
+			OVRPose localPose = new OVRPose { position = OVRInput.GetLocalControllerPosition(m_controller), orientation = OVRInput.GetLocalControllerRotation(m_controller)};
+            OVRPose offsetPose = new OVRPose { position = m_anchorOffsetPosition, orientation = m_anchorOffsetRotation};
             localPose = localPose * offsetPose;
 
             OVRPose trackingSpace = transform.ToOVRPose() * localPose.Inverse();
 
-			Vector3 linearVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerVelocity(m_controller) * throwMultiplier; //added throwMultiplier - 9.29
-            Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller); //trackingSpace.orientation
+            //CHOSE to use PlayerController instead of CenterCamera, because i didnt want the camera to modify the up and down values, just the side to side values. As Im finding most people slightly dip their head when throwing (to keep an eye on the disc)
+            Vector3 linearVelocity = vrHeadsetTransform.forward * OVRInput.GetLocalControllerVelocity(m_controller).magnitude * throwMultiplier; //added throwMultiplier - 9.29
+            Vector3 angularVelocity = trackingSpace.orientation * OVRInput.GetLocalControllerAngularVelocity(m_controller) * throwMultiplier; //trackingSpace.orientation - replaced by Quaternion
 
             GrabbableRelease(linearVelocity, angularVelocity);
-
         }
 
         // Re-enable grab volumes to allow overlap events

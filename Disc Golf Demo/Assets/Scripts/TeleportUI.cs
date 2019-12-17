@@ -5,7 +5,7 @@ using UnityEngine;
 public class TeleportUI : MonoBehaviour
 {
 
-    public DiscRespawn discRespawn;
+    public DiscProgressionManagerHole discRespawnHole;
     public GameObject retrievableDisc;
     public GameObject glow;
 
@@ -26,7 +26,7 @@ public class TeleportUI : MonoBehaviour
     {
         if (other.tag == "Hand")
         {
-            discRespawn.TeleportPlayerOnUIDiscTouch();
+            discRespawnHole.TeleportPlayerOnUIDiscTouch();
 
             glow.SetActive(false);
 

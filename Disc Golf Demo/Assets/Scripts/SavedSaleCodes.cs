@@ -7,7 +7,8 @@ using System.Linq;
 
 public class SavedSaleCodes : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public static SavedSaleCodes instance;
 
     public static string currentCode;
     public string[] acceptableCodes;
@@ -15,27 +16,32 @@ public class SavedSaleCodes : MonoBehaviour
     public List<string> usedCodesList;
     public List<string> acceptableCodesList;
 
-    //to destroy once game fully run through
-    public bool nowDestroy;
-
     //for choosing which number to appear
     public int randomCodeNumber;
 
     //activates Code selection process
     public bool gameOver;
 
+    private void Awake()
+    {
+            //check if this is the first instance of this script, it not, destroy itself
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                print("Codes Destroyed");
+                return;
+            }
+
+        DontDestroyOnLoad(this.gameObject);
+
+    }
+
     private void Start()
     {
-        if (!nowDestroy)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
-        if (nowDestroy)
-        {
-            Destroy(gameObject);
-        }
-
         //turning this off to prevent "replay" populating new code issue
         gameOver = false;
             
@@ -45,15 +51,12 @@ public class SavedSaleCodes : MonoBehaviour
             acceptableCodes = new string[] { "Vulture1", "Innova2", "Dynamic3", "Latitude645","Discmania6","Gateway7","Westside8", "Millenium9","Legacy10","Prodigy11","MVP12","Discraft13","Legacy14","Vibram15","Pridiscus16","ABC17","DGA18","Daredevil19","Ching20","Crosslap21","UB22","Aerobie23","RIP24","Discwing25","Lightning26","DGK27","Kastaplast28","Wham-O27","Quest28","Salient29","MVP30" }; //make these codes into names of frisbees? 1 2 3 - old style: "3QemV" 
 
         //set USED array values to previously used in last game
-
         usedCodes = PlayerPrefsX.GetStringArray("usedCodes");
             
             
             //make USED Arrays into Lists
             usedCodesList = usedCodes.ToList();
-            
-
-        //Updated();
+           
     }
 
     // Update is called once per frame
@@ -68,12 +71,7 @@ public class SavedSaleCodes : MonoBehaviour
 
             //produce a random code to remove from acceptable list, and add to used list
             randomCodeNumber = UnityEngine.Random.Range(0, acceptableCodesList.Count);
-            //print(randomCodeNumber);
 
-            //confirm not pass
-            //Debug.Log("gameOverSave not fully activated");
-
- 
             //convert into LIST, add random from accaptable array
             usedCodesList.Add(acceptableCodes[randomCodeNumber]);
 
@@ -81,17 +79,6 @@ public class SavedSaleCodes : MonoBehaviour
             usedCodes = usedCodesList.ToArray();
 
             acceptableCodes = acceptableCodesList.Except(usedCodesList).ToArray();
-
-            // Displays the values of the Array.
-            //Console.WriteLine("The target Array contains the following (before and after copying):");
-            //PrintValues(usedCodes, ' ');
-
-            // Copies the source Array to the target Array, starting at index 1. TRASH because copies whole array, not just 1
-            //acceptableCodes.CopyTo(usedCodes, 1);
-
-            // Displays the values of the Array.
-            //PrintValues(usedCodes, ' ');
-
 
             //save the new arrays
             PlayerPrefsX.SetStringArray("acceptableCodes", acceptableCodes);
@@ -111,9 +98,6 @@ public class SavedSaleCodes : MonoBehaviour
         }
         
     }
-
-
-
 
 public static void PrintValues(Array myArr, char mySeparator)
     {

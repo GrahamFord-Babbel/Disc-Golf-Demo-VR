@@ -32,11 +32,8 @@ public class DistanceTrigger : MonoBehaviour
     {
         if (other.tag == "Disc")
         {
-            Debug.Log(this.name + "was reached");
-
             //update pillar to "reached" material
             this.GetComponent<Renderer>().material.color = Color.blue;
-
         }
         //if (other.tag == "Player")
         //{

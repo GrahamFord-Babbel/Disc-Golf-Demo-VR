@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Disc Golf Demo - FinalQuest - 11.1
+  productName: Disc Golf Demo - QuestPerfectThrow - 11.22
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.Apollo5.Cloud9DiscDemoQuestFinal111Update
+    Android: com.Apollo5.Cloud9DiscDemoQuestPerfectThrowUpdate
     Standalone: com.Apollo5.DiscDemo - Rift Junk
     WebGL: com.oculus.UnitySample
   buildNumber:
@@ -711,6 +711,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 

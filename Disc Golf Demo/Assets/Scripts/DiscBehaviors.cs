@@ -14,6 +14,7 @@ public class DiscBehaviors : MonoBehaviour
     public float turnFade;
     public float adjustedTurnFade;
     public bool adjustmentsEnabled;
+    public bool saveStickerPlaced;
 
     //array and list for Speed modification
     public GameObject[] handAnchors;
@@ -35,10 +36,14 @@ public class DiscBehaviors : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //get saved values from when player made disc (and customized its flight numbers)
-        speed = PlayerPrefs.GetFloat("driverSpeed");
-        glide = PlayerPrefs.GetFloat("driverGlide");
-        turnFade = PlayerPrefs.GetFloat("driverTurnFade");
+        //doesn't seem this ever activates - bc script doesnt carry over therefore neither does the bool
+        if (saveStickerPlaced)
+        {
+            //get saved values from when player made disc (and customized its flight numbers)
+            speed = PlayerPrefs.GetFloat("driverSpeed");
+            glide = PlayerPrefs.GetFloat("driverGlide");
+            turnFade = PlayerPrefs.GetFloat("driverTurnFade");
+        }
 
         //get resources-
         //find all objects that have the OVRGrabber script
@@ -65,7 +70,7 @@ public class DiscBehaviors : MonoBehaviour
         for (int i = 0; i < handAnchors.Length; i++)
         {
             //for normalizing the disc if no customization
-            if(speed == 0)
+            if(adjustedSpeed == 0) //changed this from speed to adjusted speed 11.29, did it work?
             {
                 ovrGrabbers[i].throwMultiplier = 12 / 3;
             }
@@ -76,7 +81,7 @@ public class DiscBehaviors : MonoBehaviour
             }
         }
         //reset glide
-        if(glide == 0)
+        if(adjustedGlide == 0) //changed this from speed to adjusted speed 11.29, did it work?
         {
             gravityAlterationScript.putterGravityMod = -2.5f;
             gravityAlterationScript.gravityChangeActivated = true;
@@ -88,7 +93,7 @@ public class DiscBehaviors : MonoBehaviour
         }
         print("GRAVITY MOD:" + -glide);
 
-        if (turnFade != 0)
+        if (adjustedTurnFade != 0) //changed this from speed to adjusted speed 11.29, did it work?
         {
             throwForce.sideThrust = turnFade;
         }
@@ -102,11 +107,14 @@ public class DiscBehaviors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //change disc behaviors to putter
-        if (putterActivate.putterGravityActivated)
+        if(putterActivate != null)
         {
-            gravityChangeActivated = true;
-            adjustmentsEnabled = false;
+            //change disc behaviors to putter
+            if (putterActivate.putterGravityActivated)
+            {
+                gravityChangeActivated = true;
+                adjustmentsEnabled = false;
+            }
         }
 
         if (gravityChangeActivated)

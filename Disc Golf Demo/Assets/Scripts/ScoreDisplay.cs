@@ -22,7 +22,7 @@ public class ScoreDisplay : MonoBehaviour {
     //find if replayed
     public ReplayButton replayButton;
 
-    public DiscRespawn discRespawn;
+    public DiscProgressionManagerHole discRespawnHole;
 
     public SavedSaleCodes savedSaleCodes;
 
@@ -33,8 +33,7 @@ public class ScoreDisplay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        //scoreText = GetComponent<Text>();
+
         scene = SceneManager.GetActiveScene();
         highScore = PlayerPrefs.GetFloat("highScore", highScore);
         if (highScore == 0)
@@ -62,17 +61,12 @@ public class ScoreDisplay : MonoBehaviour {
 
 
         //if final hole, apply the unique sales code to UI
-        if (scene.buildIndex == 3) 
+        if (scene.buildIndex == 2) //should remove this condition eventually
         {
-            if (discRespawn.activateCode == true)
+            if (discRespawnHole.activateCode == true)
             {
-                //get previous high score - use if above in Start doesnt work
-                //PlayerPrefs.GetFloat("highScore", highScore);
 
-
-                //if (!replayButton.replayGame)
-                //{
-                savedSaleCodes = discRespawn.savedSaleCodes;
+                savedSaleCodes = discRespawnHole.savedSaleCodes;
                     lastSaved = savedSaleCodes.usedCodes.Length;
                     print("This is last saved:" + lastSaved);
 
@@ -81,18 +75,6 @@ public class ScoreDisplay : MonoBehaviour {
                     useCodeText.text = useCodeText.text + " " + savedSaleCodes.usedCodes[lastSaved - 1];
                     print("officially visibly printed new code");
                 }
-                    //delete if above works
-                    //foreach (string i in discRespawn.savedSaleCodes.usedCodes)
-                    //{
-                    //    useCodeText.text =  "You've Completed the Demo!              Recieve 5 % off in-store purchase                      @Cloud9               USE CODE:" + i;
-                    //}
-           
-                //}
-
-                //if (replayButton.replayGame)
-                //{
-                //    useCodeText.text = useCodeText.text + " " + savedSaleCodes.usedCodes[lastSaved - 1];
-                //}
                 
                 //set the new high score to current score if lower than high score (lol low / high is opposite in golf)
                 if (highScore > scoreKeeper.score)
@@ -101,12 +83,8 @@ public class ScoreDisplay : MonoBehaviour {
                     PlayerPrefs.SetFloat("highScore", highScore);
                     Debug.Log("high score is: " + highScore);
                 }
-                //else
-                //{
-                //    highScoreText.text = "Today's High Score: " + highScore;
-                //}
 
-                discRespawn.activateCode = false;
+                discRespawnHole.activateCode = false;
             }
 
         }

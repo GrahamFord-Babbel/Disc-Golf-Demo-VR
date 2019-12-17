@@ -9,6 +9,7 @@ TagManager:
   - Goal
   - savedSalesCodes
   - HandAnchor
+  - EventManager
   layers:
   - Default
   - TransparentFX

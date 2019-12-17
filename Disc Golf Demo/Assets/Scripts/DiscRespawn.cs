@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class DiscRespawn : MonoBehaviour
 {
-    public GameObject discRespawnLocation;
+    //moved to discReturn  - can delete when finished
+    public GameObject discRespawnLocation; 
     public Vector3 discOriginalLocation;
+
     public Vector3 discReturnLocation;
     public ScoreKeeper scoreKeeper;
     //public bool discLanded; //moved to Main location on EventManager
 
     //UI Components
-    public Text holeInOne;
+    public Text holeInOne; //aka BASKET MADE - show GameOverUI
     public GameObject gameOverUI;
     public ReplayButton replayButton;
     public TeleportUI teleportUI;
@@ -49,7 +51,10 @@ public class DiscRespawn : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+
+        //moved to discReturn - can delete when finished
         discOriginalLocation = discRespawnLocation.transform.position;
+
         holeInOne.enabled = false;
         gameOverUI.SetActive(false);
         activateCode = false;
@@ -83,7 +88,7 @@ public class DiscRespawn : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnDiscCollision(Collision collision)
     {
         //rigidbody of most likely the disc
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
@@ -113,8 +118,8 @@ public class DiscRespawn : MonoBehaviour
             }
                 if (scene.buildIndex == 2)
                 {
-                    //increase throw count
-                    scoreKeeper.score += 1;
+                //increase throw count
+                IncrementScore();
 
                     //collect score of 1st hole - tbd
                     PlayerPrefs.SetFloat("Score", scoreKeeper.score);
@@ -126,8 +131,8 @@ public class DiscRespawn : MonoBehaviour
                 else if (scene.buildIndex == 3)
                 {
 
-                    //increase throw count
-                    scoreKeeper.score += 1;
+                //increase throw count
+                IncrementScore();
                     //save score
                     PlayerPrefs.SetFloat("Score", scoreKeeper.score);
 
@@ -155,9 +160,6 @@ public class DiscRespawn : MonoBehaviour
                     //Load the next scene & as "Countable" if over 60 seconds
                     StartCoroutine(LoadCountableScene());
                     //loadCountableSceneBool = true;
-
-                    //to destroy the the SavedSalesCodes once full game run through
-                    savedSaleCodes.nowDestroy = true;
                 }
             
             disolveAnim.SetActive(true);
@@ -171,21 +173,26 @@ public class DiscRespawn : MonoBehaviour
 
             if (collision.gameObject.tag == "Disc")
             {
-            eventManager.discLanded = true;
-            scoreKeeper.score = 0;
-            //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            discReturnLocation = discOriginalLocation; //+ new Vector3(Random.Range(0, 2), 0, 0);
+
+                //name here for DiscReturnToPlayer(Vector3 discOriginalLocation) - this will set discOriginalLocation
+
+
+                eventManager.discLanded = true;
+                scoreKeeper.score = 0; //replace with a "resetScore" script - if used more than once
+                //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                discReturnLocation = discOriginalLocation; //+ new Vector3(Random.Range(0, 2), 0, 0);
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 rb.position = discReturnLocation;
-            //eventManager.initialDiscVelocity = 0;
+                //eventManager.initialDiscVelocity = 0;
 
-            if (this.gameObject.name == "GoalScoreTrigger-300ft")
+                //triggers LOADNEXT SCENE - when player throws into basket
+                if (this.gameObject.name == "GoalScoreTrigger-300ft")
                 {
                     holeInOne.enabled = true;
                 }
 
-                
+
 
             }
         }
@@ -203,7 +210,7 @@ public class DiscRespawn : MonoBehaviour
                     }
 
                     //increase throw count
-                    scoreKeeper.score += 1;
+                    IncrementScore();
 
                     //mark location of disc landed
                     discLandedLocation = rb.position;
@@ -266,8 +273,12 @@ public class DiscRespawn : MonoBehaviour
 
         replayButton.replayGame = false;
         loadCountableSceneBool = false;
-        savedSaleCodes.nowDestroy = true;
         Destroy(savedSaleCodes.gameObject);
         SceneManager.LoadScene(0);
+    }
+
+    void IncrementScore()
+    {
+        scoreKeeper.score += 1;
     }
 }

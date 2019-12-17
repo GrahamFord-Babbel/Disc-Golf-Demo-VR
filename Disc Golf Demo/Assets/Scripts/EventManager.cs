@@ -26,20 +26,14 @@ public class EventManager : MonoBehaviour
 
         discIsThrown = false; //THIS BREAKs FADE 11.1? was in above
 
-        if (SceneManager.GetActiveScene().buildIndex != 3)
+        if (SceneManager.GetActiveScene().buildIndex != 2)
         {
             nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         }
         else
         {
-            nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 3;
+            nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 2;
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 

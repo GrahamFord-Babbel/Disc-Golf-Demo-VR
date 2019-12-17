@@ -15,7 +15,7 @@ public class ScoreKeeper : MonoBehaviour {
     public bool discGrabbedScoreKeeper;
 
     //to see that disc has landed, reset score (or think about listing the highest score)
-    public DiscRespawn discRespawn;
+    public DiscRespawnManagerDrivingRange discRespawnDR;
 
     //for disabling pedestal so users don't hit it with first throw
     public GameObject pedestal;
@@ -28,9 +28,7 @@ public class ScoreKeeper : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        DontDestroyOnLoad(gameObject);
         pedestal = GameObject.Find("Pedestal");
-
 	}
 	
 	// Update is called once per frame
@@ -66,9 +64,12 @@ public class ScoreKeeper : MonoBehaviour {
 
         if (discGrabbedScoreKeeper && eventManager.discLanded != true)
         {
-            if (discRespawn.scene.buildIndex < 2)
+            if(discRespawnDR != null)
             {
-                score = Vector3.Distance(player.position, discA.position) * distanceMultiplier;
+                if (discRespawnDR.scene.buildIndex < 2)
+                {
+                    score = Vector3.Distance(player.position, discA.position) * distanceMultiplier;
+                }
             }
 
         }

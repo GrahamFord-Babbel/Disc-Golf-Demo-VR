@@ -10,8 +10,6 @@ public class ThrowForce : MonoBehaviour
     public float sideThrust;
     public Rigidbody discRb;
     public ScoreKeeper scoreKeeper;
-    public HapticVibration hapticVibration;
-    public DiscRespawn discRespawn;
     public bool addForce;
     public float overTimeSpeed;
 
@@ -19,9 +17,7 @@ public class ThrowForce : MonoBehaviour
 
     void Start()
     {
-        //discRb = hapticVibration.discRb.GetComponent<Rigidbody>(); //disabling because cant find it, look later
-        addForce = false; //THIS BREAKs FADE 11.1?
-        //sideThrust = 0;//THIS BREAKs FADE 11.1? - this deffinitely breaks it because sideThrust is a multiplier, so if it was ever 0, it could never get more than 0
+        addForce = false; 
     }
 
     private void Update()
@@ -47,17 +43,6 @@ public class ThrowForce : MonoBehaviour
                 overTimeSpeed = overTimeSpeed + Time.deltaTime;
             }
 
-            //IF ADJUSTMENT WORKS - DELETE
-            ////right hand throw
-            //if (eventManager.rightHand == true)
-            //{
-            //    turnOrFade = 1;
-            //}
-            //else
-            //{
-            //    turnOrFade = -1;
-            //}
-
             //turn or fade - Way to eliminate REPEAT repetition below?
             //FADE increases the curve right overtime
             if (sideThrust > 0){
@@ -76,57 +61,6 @@ public class ThrowForce : MonoBehaviour
 
 
         }
-        
-
-
-
-        //DELETE ALL THIS WHEN SET:
-
-        //if (addForce == true)
-        //{
-        //    //if disclanded is not true
-        //    //Debug.Log("the rigidbody velocity is: " + rb.velocity);
-        //    if (eventManager.discThrown.name != "PutterDisc")
-        //    {
-        //        //makes the initial speed thrown for the user seem more realistic (instead of "slow mo")
-        //        if (scoreKeeper.score <= 60)
-        //        {
-        //            //Debug.Log("thrust added");
-        //            //rb = eventManager.discThrown.GetComponent<Rigidbody>();
-        //            overTimeSpeed = overTimeSpeed + Time.deltaTime;
-        //            //thrust = thrust - overTimeSpeed;
-
-        //            //if right hand
-        //            if (eventManager.rightHand == true)
-        //            {
-        //                rb.AddRelativeForce(transform.forward * -thrust); //*eventManager.initialDiscVelocity)
-        //            }
-
-
-        //            //if left hand
-        //            if (eventManager.rightHand == false)
-        //            {
-        //                rb.AddRelativeForce(transform.forward * thrust); //*eventManager.initialDiscVelocity)
-        //            }
-
-        //        }
-        //    }
-
-        //    if ( scoreKeeper.score >= 50) //rb.velocity.x >= -6.0f
-        //    {
-        //        //rb = eventManager.discThrown.GetComponent<Rigidbody>();
-
-
-        //        //alternative - consistent curve from throw start
-        //        //Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
-        //       //rb.AddRelativeForce(0, 0, sideDir * curveAmount);
-
-
-        //        rb.AddRelativeForce(0,0,sideThrust);
-        //        //rb.AddForce(0, -descentThrust, 0);
-        //        // Debug.Log("Sidethrust added");
-        //    }
-        //}
 
     }
 }

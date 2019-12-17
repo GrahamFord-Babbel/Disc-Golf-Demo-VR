@@ -1296,13 +1296,15 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-    <Compile Include="Assets\Scenes\TrashScriptTelTest.cs" />
     <Compile Include="Assets\Scripts\ButtonFunctions.cs" />
     <Compile Include="Assets\Scripts\DisableGuiButtonHighlightState.cs" />
     <Compile Include="Assets\Scripts\DiscBehaviors.cs" />
+    <Compile Include="Assets\Scripts\discCollision.cs" />
     <Compile Include="Assets\Scripts\DiscGlowGrab.cs" />
     <Compile Include="Assets\Scripts\DiscIgnore.cs" />
+    <Compile Include="Assets\Scripts\DiscProgressionManagerHole.cs" />
     <Compile Include="Assets\Scripts\DiscRespawn.cs" />
+    <Compile Include="Assets\Scripts\DiscRespawnManagerDrivingRange.cs" />
     <Compile Include="Assets\Scripts\DistanceTrigger.cs" />
     <Compile Include="Assets\Scripts\EnableGuiButtonHighlightState.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
@@ -1318,7 +1320,6 @@
     <Compile Include="Assets\Scripts\PUN Code\PhotonNetworkManager.cs" />
     <Compile Include="Assets\Scripts\PutterActivate.cs" />
     <Compile Include="Assets\Scripts\ReplayButton.cs" />
-    <Compile Include="Assets\Scripts\replayfakeDelete.cs" />
     <Compile Include="Assets\Scripts\SavedSaleCodes.cs" />
     <Compile Include="Assets\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
@@ -1327,6 +1328,7 @@
     <Compile Include="Assets\Scripts\ThrowForce.cs" />
     <Compile Include="Assets\Scripts\ThrowForceHole1.cs" />
     <Compile Include="Assets\Scripts\VrButtonInput.cs" />
+    <Compile Include="Assets\TrailerMaterials\TrashScriptTelTest.cs" />
     <None Include="Assets\PlayMaker\Templates\Readme.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_PC_SingleComponent.shader" />
     <None Include="Assets\PlayMaker\Readme.txt" />
