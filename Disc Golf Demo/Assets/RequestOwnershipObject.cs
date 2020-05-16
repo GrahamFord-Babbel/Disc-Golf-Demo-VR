@@ -1,0 +1,40 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Normal.Realtime;
+
+public class RequestOwnershipObject : MonoBehaviour
+{
+    public RealtimeView _realtimeView;
+    private RealtimeTransform _realtimeTransform;
+
+    // Start is called before the first frame update
+    public void Awake()
+    {
+        _realtimeView = GetComponent<RealtimeView>();
+        _realtimeTransform = GetComponent<RealtimeTransform>();
+    }
+
+    private void Update()
+    {
+        // If this CubePlayer prefab is not owned by this client, bail.
+        if (!_realtimeView.isOwnedLocally)
+            return;
+
+        //// Make sure we own the transform so that RealtimeTransform knows to use this client's transform to synchronize remote clients.
+        //_realtimeView.RequestOwnership();
+
+        //// Make sure we own the transform so that RealtimeTransform knows to use this client's transform to synchronize remote clients.
+        _realtimeTransform.RequestOwnership();
+
+        //// Grab the x/y input from WASD / a controller
+        //float x = Input.GetAxis("Horizontal");
+        //float y = Input.GetAxis("Vertical");
+
+        //// Apply to the transform
+        //Vector3 localPosition = transform.localPosition;
+        //localPosition.x += x * speed * Time.deltaTime;
+        //localPosition.y += y * speed * Time.deltaTime;
+        //transform.localPosition = localPosition;
+    }
+}

@@ -10,6 +10,7 @@ TagManager:
   - savedSalesCodes
   - HandAnchor
   - EventManager
+  - Sticker
   layers:
   - Default
   - TransparentFX

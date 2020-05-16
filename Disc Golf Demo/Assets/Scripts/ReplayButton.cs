@@ -31,9 +31,15 @@ public class ReplayButton : MonoBehaviour
 
 
 
-                yield return new WaitForSeconds(1);
-                eventManager.LoadNextScene();
-            
+            yield return new WaitForSeconds(1);
+            eventManager.LoadNextScene();
+            //ONLY FOR IF WE HAD SETUP A SEPERATE ROOM FOR MULTIPLAYER - 2.11
+            //if (this.gameObject.name == "MultiplayerReplayButton")
+            //{
+            //    eventManager.nextSceneIndex = 0;
+            //    eventManager.LoadNextScene();
+            //}
+
             //other wise teleport user bc they touched disc & attach disc to their gripped hand
         }    
 

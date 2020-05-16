@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Normal.Realtime;
 
 public class HapticVibration : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class HapticVibration : MonoBehaviour
     public TrailRenderer discTrail;
 
     public Transform vrHeadSetTransform;
+
+    //get the realtime view from Disc
+    public RealtimeView realtimeViewOnHaptic;
 
 
     // Start is called before the first frame update
@@ -118,7 +122,10 @@ public class HapticVibration : MonoBehaviour
         //find the disc picked up
         if (other.tag == "Disc")
         {
-            
+            realtimeViewOnHaptic = other.gameObject.GetComponent<RealtimeView>();
+            realtimeViewOnHaptic.RequestOwnership();
+            print("OWNERSHIOP REQUESTED");
+
             eventManager.discThrown = other.gameObject;
             //eventManager.discThrown.GetComponent<Rigidbody>().velocity = Vector3.zero;
 

@@ -62,6 +62,7 @@ public class SavedSaleCodes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //gameOver is activated in the scripts: ReplayButton or DiscRespawn
         if (gameOver)
         {

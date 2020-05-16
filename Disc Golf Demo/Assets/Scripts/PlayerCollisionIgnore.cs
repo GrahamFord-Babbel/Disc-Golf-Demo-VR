@@ -17,6 +17,9 @@ public class PlayerCollisionIgnore : MonoBehaviour
 
     void Start()
     {
+        //find player
+        player1 = GameObject.FindGameObjectWithTag("Player");
+
         //this is needed
         Physics.IgnoreCollision(player1.GetComponent<Collider>(), GetComponent<Collider>());
 

@@ -16,6 +16,13 @@ public class stickerDiscSave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        eventManager = GameObject.FindGameObjectWithTag("EventManager").GetComponent<EventManager>();
+        discBehaviors = GameObject.FindGameObjectWithTag("EventManager").GetComponent<DiscBehaviors>();
+        //if(stickerPasted == null)
+        //{
+        //    stickerPasted = GameObject.FindGameObjectWithTag("Sticker");
+        //}
+
         stickerPasted.SetActive(false);
         stickTrans = this.gameObject.transform;
 

@@ -18,7 +18,7 @@ public class EventManager : MonoBehaviour
     public bool rightHand = true;
     public float initialDiscVelocity;
     public Transform discLocationX;
-    int nextSceneIndex;
+    public int nextSceneIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class EventManager : MonoBehaviour
         }
 
     }
+
 
     public void LoadNextScene()
     {
